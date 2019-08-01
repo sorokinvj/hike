@@ -1,0 +1,75 @@
+Arguments: 
+  /Users/vladislavsorokin/.nvm/versions/node/v12.6.0/bin/node /usr/local/Cellar/yarn/1.15.2/libexec/bin/yarn.js
+
+PATH: 
+  /Users/vladislavsorokin/.nvm/versions/node/v12.6.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin:/Users/vladislavsorokin/webprojects/google-cloud-sdk/bin:/Users/vladislavsorokin/.nvm/versions/node/v12.6.0/bin
+
+Yarn version: 
+  1.15.2
+
+Node version: 
+  12.6.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/vladislavsorokin/webprojects/hike/package.json: Unexpected token } in JSON at position 1286
+      at JSON.parse (<anonymous>)
+      at /usr/local/Cellar/yarn/1.15.2/libexec/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.15.2/libexec/lib/cli.js:304:30)
+      at /usr/local/Cellar/yarn/1.15.2/libexec/lib/cli.js:315:13
+
+npm manifest: 
+  {
+    "name": "hike landing",
+    "version": "1.0.0",
+    "scripts": {
+      "dev": "node server.js",
+      "build": "next build && pm2 restart prod",
+      "build-dev": "next build && pm2 restart next",
+      "start": "NODE_ENV=production node server.js"
+    },
+    "dependencies": {
+      "@babel/polyfill": "^7.4.3",
+      "@fortawesome/fontawesome-svg-core": "^1.2.0-14",
+      "@fortawesome/free-solid-svg-icons": "^5.1.0-11",
+      "@fortawesome/react-fontawesome": "0.1.0-11",
+      "@zeit/next-css": "latest",
+      "body-parser": "^1.19.0",
+      "bulma": "latest",
+      "express": "latest",
+      "mobile-detect": "^1.4.3",
+      "next": "latest",
+      "next-cookies": "latest",
+      "path-match": "^1.2.4",
+      "prismic-javascript": "latest",
+      "prismic-reactjs": "latest",
+      "prop-types": "latest",
+      "react": "latest",
+      "react-dom": "latest",
+      "react-media": "latest",
+      "styled-components": "latest",
+      "unfetch": "latest"
+    },
+    "license": "ISC",
+    "devDependencies": {
+      "@babel/preset-env": "^7.4.3",
+      "babel-eslint": "^10.0.1",
+      "babel-plugin-inline-react-svg": "^1.1.0",
+      "eslint": "^5.15.3",
+      "eslint-config-airbnb": "^17.1.0",
+      "eslint-plugin-import": "^2.14.0",
+      "eslint-plugin-jsx-a11y": "^6.1.1",
+      "eslint-plugin-react": "^7.11.0",
+      "url-loader": "latest",
+    },
+    "browserslist": "> 0.25%, not dead"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
