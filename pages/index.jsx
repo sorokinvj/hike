@@ -26,6 +26,7 @@ const MainPage = styled.div`
       height: 209px;
     }
     @media (max-width: 415px){
+      width: 100%;
       height: 234px;
     }
   }
