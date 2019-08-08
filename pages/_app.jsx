@@ -5,7 +5,7 @@ import MobileDetect from 'mobile-detect';
 // import Nav from '../components/navigation';
 // import Footer from '../components/footer';
 // import GeneralHead from '../components/GeneralHead';
-// import GlobalStyle from '../components/globals';
+import GlobalStyle from '../components/globals';
 
 class MyApp extends App {
   // static async getInitialProps({ Component, ctx }) {
@@ -57,11 +57,12 @@ class MyApp extends App {
 
     return (
       <Container>
-          {/* <GlobalStyle />
-          <GeneralHead />
-          <Nav
+        <GlobalStyle />
+          {/* <GeneralHead />
+               <Nav
             cookieConsent={cookieConsent}
           /> */}
+
           <Component {...pageProps} phone={phone} tablet={tablet} />
           {/* <Footer /> */}
       </Container>

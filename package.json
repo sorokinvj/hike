@@ -26,7 +26,8 @@
     "react": "latest",
     "react-dom": "latest",
     "react-media": "latest",
-    "styled-components": "latest",
+    "react-player": "^1.11.1",
+    "styled-components": "^4.3.2",
     "unfetch": "latest"
   },
   "license": "ISC",
