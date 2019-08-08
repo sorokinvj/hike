@@ -28,6 +28,7 @@
     "react-media": "latest",
     "react-player": "^1.11.1",
     "styled-components": "^4.3.2",
+    "typeface-fira-sans": "^0.0.75",
     "unfetch": "latest"
   },
   "license": "ISC",
