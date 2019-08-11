@@ -19,20 +19,12 @@ const contentStyle = {
 }
 
 const Nav = styled.nav`
-    padding: 15px;
     background: transparent;
     display: flex;
     z-index: 1;
     position: absolute;
     top: 0;
     width: 100%;
-    .container {
-
-    }
-    .row {
-        justify-content: space-between;
-        
-    }
     .row > .menu {
             display: none;
     }

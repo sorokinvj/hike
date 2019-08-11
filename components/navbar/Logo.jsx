@@ -8,7 +8,7 @@ const LogoStyled = styled.div`
         width: 100%;
     }
     z-index: 9999;
-    margin: 1.5rem;
+    margin: 1.5rem auto 0 1.5rem;
 `
 
 const Logo = props => {

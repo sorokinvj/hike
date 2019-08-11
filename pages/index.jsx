@@ -13,7 +13,6 @@ import Tribe from '../components/landing/Tribe'
 import VideoHero from '../components/landing/VideoHero'
 
 const MainPage = styled.div`
-  background: black;
 `
 
 
