@@ -16,7 +16,7 @@ const Styled = styled.div`
     }
 `
 
-const HostelOnWheels = props => {
+const HostelOnWheels = () => {
   return (
     <>
         <Container>
