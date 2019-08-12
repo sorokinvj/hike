@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import { Container, Row } from '@bootstrap-styled/v4';
+import { Container, Row, Col } from '@bootstrap-styled/v4';
 import Popup from 'reactjs-popup';
 import Menu from './Menu'
 import Burger from './Burger';
@@ -25,11 +25,18 @@ const Nav = styled.nav`
     position: absolute;
     top: 0;
     width: 100%;
-    .row > .menu {
-            display: none;
-    }
     .popup-overlay {
         height: 50vh;
+    }
+    .brand-contain {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 0;
+    }
+    .brand-contain > .menu {
+            display: none;
     }
 `
 
@@ -38,18 +45,22 @@ const index = props => {
     <Nav>
         <Container>
             <Row>
-                <Logo />
-                <Menu />
-                {/* burger button and mobile menu */}
-                <Popup
-                    modal
-                    closeOnDocumentClick
-                    contentStyle={contentStyle}
-                    trigger={open => <Burger open={open} />}
-                    position="top right"
-                >
-                    {close => <Menu close={close} />}
-                </Popup>
+                <Col xs="12">
+                    <div className="brand-contain">
+                        <Logo />
+                        <Menu />
+                        {/* burger button and mobile menu */}
+                        <Popup
+                            modal
+                            closeOnDocumentClick
+                            contentStyle={contentStyle}
+                            trigger={open => <Burger open={open} />}
+                            position="top right"
+                        >
+                            {close => <Menu close={close} />}
+                        </Popup>
+                    </div>
+                </Col>
             </Row>
         </Container>
   

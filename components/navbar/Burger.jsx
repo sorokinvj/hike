@@ -9,7 +9,6 @@ const BurgerButton = styled.div`
     }
     position: relative;
     z-index: 9999;
-    margin: 1.5rem 1.5rem 0 0;
     
     .burger-menu {
       display: inline-block;

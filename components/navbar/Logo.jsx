@@ -3,12 +3,11 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const LogoStyled = styled.div`
-    width: 120px;
+    width: 12rem;
     img {
         width: 100%;
     }
     z-index: 9999;
-    margin: 1.5rem auto 0 1.5rem;
 `
 
 const Logo = props => {
