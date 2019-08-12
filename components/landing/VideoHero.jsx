@@ -13,17 +13,17 @@ const Hero = styled.div`
 `
 
 const VideoHero = props => {
-    return (
-        <Hero>
-            <ReactPlayer 
-                url='http://www.youtube.com/watch?v=pgm-LWY7BLU' 
-                // playing           
-                width='100%'
-                height='100%'
-                muted
-            />
-        </Hero>
-    )
+  return (
+    <Hero>
+      <ReactPlayer 
+        url='http://www.youtube.com/watch?v=pgm-LWY7BLU' 
+        // playing           
+        width='100%'
+        height='100%'
+        muted
+      />
+    </Hero>
+  )
 }
 
 VideoHero.propTypes = {
