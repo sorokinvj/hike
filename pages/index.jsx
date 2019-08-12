@@ -1,6 +1,6 @@
 // core libs
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import ExperienceFacts from '../components/landing/ExperienceFacts'
@@ -20,24 +20,24 @@ class Index extends React.Component {
 //   static propTypes = {
 //   }
 
-//   static defaultProps = {
-//   }
+  //   static defaultProps = {
+  //   }
 
 
-//   static async getInitialProps(ctx) {
-//     // получаем все необходимое для рендеринга компонента от сервера
+  //   static async getInitialProps(ctx) {
+  //     // получаем все необходимое для рендеринга компонента от сервера
 
-//     return { };
-//   }
+  //     return { };
+  //   }
 
 
-//   componentDidMount() {
+  //   componentDidMount() {
 
-//   }
+  //   }
 
-//   componentDidUpdate(prevProps) {
+  //   componentDidUpdate(prevProps) {
 
-//   }
+  //   }
 
   render() {
     return (
@@ -51,10 +51,10 @@ class Index extends React.Component {
         <HostelOnWheels />
         <Tribe />
       </MainPage>
-    );
+    )
   }
 }
 
 
 
-export default Index;
+export default Index
