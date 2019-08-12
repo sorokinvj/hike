@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import 'typeface-fira-sans'
 
 const H2 = styled.h2`
     font-family: Fira Sans;

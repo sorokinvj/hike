@@ -17,10 +17,10 @@ const Tagline = () => {
         <Col xs="12">
           <Section>
             <H1>
-                        Now accepting applications for our launch this fall
+              Now accepting applications for our launch this fall
             </H1>
             <Button>
-                        Apply now
+              Apply now
             </Button>
           </Section>
         </Col>

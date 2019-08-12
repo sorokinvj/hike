@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 import 'typeface-fira-sans'
+import 'typeface-fira-sans-extra-condensed'
 
 const GlobalStyle = createGlobalStyle`
 

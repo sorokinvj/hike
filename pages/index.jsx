@@ -15,7 +15,6 @@ import VideoHero from '../components/landing/VideoHero'
 const MainPage = styled.div`
 `
 
-
 class Index extends React.Component {
 //   static propTypes = {
 //   }

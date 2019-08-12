@@ -1,7 +1,6 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
 import styled from 'styled-components'
-
 import { Container, Row, Col } from '@bootstrap-styled/v4'
 import H2 from '../style/H2'
 
@@ -24,14 +23,20 @@ const Styled = styled.div`
 `
 
 const Lifeonthemove = () => {
-    return (
-        <Styled>
+  return (
+    <Container theme={{'$grid-gutter-width': '0px'}}>
+      <Row>
+        <Col xs="12">
+          <Styled>
             <H2>Life on the move</H2>
             <p className="body">
                 Get the most out of Europe by covering huge distances at night while sleeping in our super comfortable bus
             </p>
-        </Styled>
-    )
+          </Styled>
+        </Col>
+      </Row>
+    </Container>
+  )
 }
 
 // Lifeonthemove.propTypes = {

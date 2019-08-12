@@ -32,6 +32,7 @@
     "reactjs-popup": "^1.4.2",
     "styled-components": "^4.3.2",
     "typeface-fira-sans": "^0.0.75",
+    "typeface-fira-sans-extra-condensed": "^0.0.72",
     "unfetch": "latest"
   },
   "license": "ISC",
