@@ -1,6 +1,6 @@
 // core libs
 import React from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import ExperienceFacts from '../components/landing/ExperienceFacts'

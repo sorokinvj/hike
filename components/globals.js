@@ -23,5 +23,13 @@ const GlobalStyle = createGlobalStyle`
     src: url('/static/fonts/agrandir/Agrandir-Regular.otf');
   }
 
+  p.body {
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 23px;
+  }
+
 `
 export default GlobalStyle
