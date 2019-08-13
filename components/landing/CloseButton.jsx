@@ -8,7 +8,8 @@ const style = {
   position: 'absolute',
   top: '2rem',
   right: '1rem',
-  margin: '0'
+  margin: '0',
+  zIndex: '9999'
 }
 
 const CloseButton = ({ close }) => {
