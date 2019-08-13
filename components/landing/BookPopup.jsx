@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import CloseButton from './CloseButton'
 import { Container, Row, Col } from '@bootstrap-styled/v4'
 import H1 from '../style/H1'
+import H2 from '../style/H2'
 import EmailCollector from './EmailCollector'
 
 const Styled = styled.div`
@@ -16,7 +17,8 @@ const Styled = styled.div`
     }
     h2 {
         color: ${props => props.theme['$darkblue']};
-        font-size: 20rem;
+        font-size: 3rem;
+        margin-bottom: 5rem;
     }
     .body {
         margin-bottom: 4rem;
@@ -36,9 +38,9 @@ const BookPopup = ({ close }) => {
             <p className="body">
                 We currently design the trip and you have a chance to reserve a place in our super duper bus only for 100 euro. Or you could just leave your email and we notify when we will ready to sell normal ticket
             </p>
-            <H1>
+            <H2>
                 Sales starts soon! Leave your email and receive 10% discount when we ready
-            </H1>
+            </H2>
             <EmailCollector />
           </Styled>
         </Col>
