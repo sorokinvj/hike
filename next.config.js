@@ -12,14 +12,14 @@ module.exports = withCSS({
           name: '[name].[ext]',
         },
       },
-    });
+    })
 
     config.node = {
       fs: 'empty',
-    };
+    }
 
-    return config;
+    return config
   },
   publicRuntimeConfig: { // Will be available on both server and client
   },
-});
+})
