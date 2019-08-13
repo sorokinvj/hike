@@ -31,6 +31,12 @@ const GlobalStyle = createGlobalStyle`
     font-size: 16px;
     line-height: 23px;
   }
-
 `
+
+export const theme = {
+  '$grid-gutter-width': '30px',
+  "$darkblue": '#002B5D',
+  "$red": '#FF0046'
+}
+
 export default GlobalStyle

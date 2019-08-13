@@ -27,6 +27,7 @@
     "prop-types": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "react-mailchimp-subscribe": "^2.1.0",
     "react-media": "latest",
     "react-player": "^1.11.1",
     "reactjs-popup": "^1.4.2",

@@ -6,6 +6,7 @@ import GeneralHead from '../components/GeneralHead'
 import GlobalStyle from '../components/globals'
 import Navbar from '../components/navbar'
 import MobileDetect from 'mobile-detect'
+import { theme } from '../components/globals'
 
 // import cookies from 'next-cookies';
 class MyApp extends App {
@@ -32,11 +33,6 @@ class MyApp extends App {
     const {
       Component, pageProps, phone, tablet, cookieConsent,
     } = this.props
-
-    const theme = {
-      '$grid-gutter-width': '30px',
-      "$darkblue": '#002B5D',
-    }
     
     return (
       <Container>

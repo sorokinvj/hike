@@ -1,0 +1,54 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
+
+import CloseButton from './CloseButton'
+import { Container, Row, Col } from '@bootstrap-styled/v4'
+import H1 from '../style/H1'
+import EmailCollector from './EmailCollector'
+
+const Styled = styled.div`
+    padding: 10rem 0;
+    text-align: center;
+
+    h1 {
+        margin-bottom: 4rem;
+    }
+    h2 {
+        color: ${props => props.theme['$darkblue']};
+        font-size: 20rem;
+    }
+    .body {
+        margin-bottom: 4rem;
+    }
+`
+
+const BookPopup = ({ close }) => {
+  return (
+    <Container>
+      <CloseButton close={close} />
+      <Row>
+        <Col xs="12">
+          <Styled>
+            <H1>
+                Reserve your spot on Hike trip next Spring
+            </H1>
+            <p className="body">
+                We currently design the trip and you have a chance to reserve a place in our super duper bus only for 100 euro. Or you could just leave your email and we notify when we will ready to sell normal ticket
+            </p>
+            <H1>
+                Sales starts soon! Leave your email and receive 10% discount when we ready
+            </H1>
+            <EmailCollector />
+          </Styled>
+        </Col>
+      </Row>
+    </Container>
+  )
+}
+
+BookPopup.propTypes = {
+  close: PropTypes.func.isRequired
+}
+
+export default BookPopup

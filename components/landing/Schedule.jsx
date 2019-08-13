@@ -2,9 +2,9 @@ import React from 'react'
 // import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import { Container, Row, Col } from '@bootstrap-styled/v4'
+import { Container, Row } from '@bootstrap-styled/v4'
 import H1 from '../style/H1'
-import Button from '../style/Button'
+import BookButton from './BookButton'
 import Day from './Day'
 
 // replace this with Priscmic call
@@ -26,9 +26,9 @@ const Schedule = () => {
           <H1>Catch all the top highlights and enjoy hidden gems off the beaten track</H1>
           {route.map(day => <Day day={day} key={day.headline}/>)}
         </Row>
-        <Button>
+        <BookButton>
             Book now
-        </Button>
+        </BookButton>
       </Container>
     </Styled>
   )

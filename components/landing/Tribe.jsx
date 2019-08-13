@@ -1,10 +1,10 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import H1 from '../style/H1'
 import Button from '../style/Button'
-import {Container} from '@bootstrap-styled/v4'
+// import { Container } from '@bootstrap-styled/v4'
 
 const Styled = styled.div`
 
@@ -24,23 +24,24 @@ const Styled = styled.div`
     }
     .body {
         margin-bottom: 6rem;
+        color: white;
     }
 `
 
 const Tribe = () => {
   return (
     <Styled>
-        <div className="text_container">
-          <H1>
+      <div className="text_container">
+        <H1>
             Find your tribe
-          </H1>
-          <p className="body">
+        </H1>
+        <p className="body">
             Here is a short text with call to action that says about how are we gonna match people  and why this is important and thus we call our users to push the button “Take Survey” and answer all the questions
-          </p>
-        </div>
-        <Button>
+        </p>
+      </div>
+      <Button>
             Take Survey
-        </Button>
+      </Button>
     </Styled>
   )
 }
