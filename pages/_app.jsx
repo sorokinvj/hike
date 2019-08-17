@@ -31,7 +31,7 @@ class MyApp extends App {
 
   render() {
     const {
-      Component, pageProps, phone, tablet, cookieConsent,
+      Component, pageProps, phone, tablet,
     } = this.props
     
     return (
