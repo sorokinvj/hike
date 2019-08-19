@@ -1,20 +1,10 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
-// import styled from 'styled-components'
 import Landing from '../../components/landing'
 
 import Prismic from 'prismic-javascript'
 import { client } from '../../prismic-configuration'
 
-// const MainPage = styled.div`
-// `
-
 class Index extends React.Component {
-//   static propTypes = {
-//   }
-
-  //   static defaultProps = {
-  //   }
 
 
   static async getInitialProps(ctx) {
@@ -26,19 +16,14 @@ class Index extends React.Component {
     return { response }
   }
 
-
-  //   componentDidMount() {
-
-  //   }
-
-  //   componentDidUpdate(prevProps) {
-
-  //   }
-
   render() {
-    console.log(this.props)
+    const  { response, phone } = this.props
     return (
-      <Landing id="general" />
+      <Landing 
+        id="general" 
+        page={response.results[0]}
+        phone={phone}
+      />
     )
   }
 }

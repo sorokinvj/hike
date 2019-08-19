@@ -45,7 +45,7 @@ const index = () => {
     <Nav>
       <Container>
         <Row>
-          <Col xs="12">
+          <Col xs={12}>
             <div className="brand-contain">
               <Logo />
               <Menu />
@@ -63,7 +63,6 @@ const index = () => {
           </Col>
         </Row>
       </Container>
-  
     </Nav>
   )
 }

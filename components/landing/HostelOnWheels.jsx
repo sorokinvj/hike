@@ -21,7 +21,7 @@ const HostelOnWheels = () => {
     <>
         <Container>
           <Row>
-            <Col xs="12">
+            <Col xs={12}>
               <Styled>
                 <H1>
                     Experience Europe with the first hostel on wheels

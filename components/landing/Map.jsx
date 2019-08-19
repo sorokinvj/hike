@@ -5,16 +5,16 @@ import styled from 'styled-components'
 const Styled = styled.div`
 `
 
-const Map = () => {
+const Map = ({ map }) => {
   return (
     <Styled>
-      <img src="/static/map.png" alt="Hike tour map" />
+      <img src={map} alt="Hike tour map" />
     </Styled>
   )
 }
 
 Map.propTypes = {
-
+  map: PropTypes.string.isRequired
 }
 
 export default Map

@@ -15,10 +15,7 @@ const contentStyle = {
 }
 
 const Styled = styled.div`
-
-    .popup-content  {
-        
-    }
+  text-align: center;
 `
 
 class BookButton extends React.Component {

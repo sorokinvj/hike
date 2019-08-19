@@ -30,7 +30,7 @@ const BookPopup = ({ close }) => {
     <Container>
       <CloseButton close={close} />
       <Row>
-        <Col xs="12">
+        <Col xs={12}>
           <Styled>
             <H1>
                 Reserve your spot on Hike trip next Spring

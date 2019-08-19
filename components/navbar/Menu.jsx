@@ -29,29 +29,34 @@ const Links = styled.div`
 const Menu = () => (
   <Links className="menu">
     <ul>
-      <Link href="#">
+      <Link href="/#home">
         <a>
-          <li>Eurotrip</li>
+          <li>Home</li>
         </a>
       </Link>
-      <Link href="#">
+      <Link href="/tour/wine">
         <a>
-          <li>Schedule</li>
+          <li>Wine tour</li>
         </a>
       </Link>
-      <Link href="#">
+      <Link href="/tour/nature">
         <a>
-          <li>The bus</li>
+          <li>Nature tour</li>
+        </a>
+      </Link>
+      <Link href="/tour/spiritual">
+        <a>
+          <li>Spiritual tour</li>
+        </a>
+      </Link>
+      <Link href="/tour/music">
+        <a>
+          <li>Music tour</li>
         </a>
       </Link>
       <Link href="/about">
         <a>
-          <li>About Hike</li>
-        </a>
-      </Link>
-      <Link href="/terms">
-        <a>
-          <li>Terms of Service</li>
+          <li>About</li>
         </a>
       </Link>
     </ul>

@@ -1,5 +1,5 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import { Container, Row, Col } from '@bootstrap-styled/v4'
@@ -10,17 +10,17 @@ const Section = styled.div`
     padding: 10rem 0;
 `
 
-const Tagline = () => {
+const Tagline = ({ h1, buttonText }) => {
   return (
     <Container>
       <Row>
-        <Col xs="12">
+        <Col xs={12} md={{offset: 3, size: 6}}>
           <Section>
             <H1>
-              Now accepting applications for our launch this fall
+              {h1}
             </H1>
             <BookButton>
-              Apply now
+              {buttonText}
             </BookButton>
           </Section>
         </Col>
@@ -29,8 +29,15 @@ const Tagline = () => {
   )
 }
 
-// Tagline.propTypes = {
+Tagline.propTypes = {
+  h1: PropTypes.string, 
+  buttonText: PropTypes.string
+}
 
-// }
+Tagline.defaultProps = {
+  h1: '',
+  buttonText: ''
+}
+
 
 export default Tagline

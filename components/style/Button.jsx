@@ -15,6 +15,9 @@ const Styled = styled.button`
     border: 0;
     box-shadow: none;
     width: 100%;
+    @media (min-width: 416px) {
+      width: 35rem;
+    }
     padding: 1.5rem;
     cursor: pointer;
     &:focus {

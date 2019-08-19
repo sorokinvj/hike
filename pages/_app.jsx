@@ -38,7 +38,7 @@ class MyApp extends App {
       <Container>
         <BootstrapProvider reset theme={theme}>
           <GlobalStyle />
-          <Navbar />
+          {phone !== null && <Navbar />}
           <GeneralHead />
           <Component {...pageProps} phone={phone} tablet={tablet} />
           <Footer />

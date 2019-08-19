@@ -1,15 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-// import { Col } from '@bootstrap-styled/v4'
+import { Col } from '@bootstrap-styled/v4'
 import H2 from '../style/H2'
 
 const Styled = styled.div`
 
     position: relative;
-    &:not(:last-child) {
-        margin-bottom: 6rem;
-    }
+    margin-bottom: 6rem;
 
     .back {
         background:${props => ("url(" + props.background + ")")};
@@ -28,7 +26,7 @@ const Styled = styled.div`
         padding: 1.5rem;
     }
     
-    .day {
+    /* .day {
         background: radial-gradient(33.00px at 50% 0%, #FF3E72 0%, #FF0046 100%);
         color: white;
         font-family: Fira Sans Extra Condensed;
@@ -44,34 +42,38 @@ const Styled = styled.div`
         top: -1.8rem;
         left: 1.5rem;
         padding: 0.6rem 0;
-    }
+    } */
 `
 
 
 const Day = ({ day }) => {
   return (
-    <Styled background={day.image}>
-      <div className="day">
-        {`day ${day.day}`}
-      </div>  
-      <div className="back">
-        <H2>
-          {day.headline}
-        </H2>
-      </div>   
-      <p className="body">
-        {day.description}
-      </p>    
-    </Styled>
+    <Col xs={12} md={4}>
+      <Styled background={day.highlight_img.url}>
+        <div className="back">
+          <H2>
+            {day.highlight_title[0].text}
+          </H2>
+        </div>   
+        <p className="body">
+          {day.highlight_description[0].text}
+        </p>    
+      </Styled>
+    </Col>
   )
 }
 
 Day.propTypes = {
   day: PropTypes.shape({
-    image: PropTypes.string,
-    day: PropTypes.number,
-    headline: PropTypes.string,
-    description: PropTypes.string,
+    highlight_title: PropTypes.arrayOf(PropTypes.shape({
+      text: PropTypes.string
+    })),
+    highlight_img: PropTypes.shape({
+      url: PropTypes.string
+    }),
+    highlight_description: PropTypes.arrayOf(PropTypes.shape({
+      text: PropTypes.string
+    })),
   })
 }
 
