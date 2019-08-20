@@ -49,27 +49,6 @@ const MainPage = styled.div`
 
 
 class Index extends React.Component {
-//   static propTypes = {
-//   }
-
-  //   static defaultProps = {
-  //   }
-
-
-  //   static async getInitialProps(ctx) {
-  //     // получаем все необходимое для рендеринга компонента от сервера
-
-  //     return { };
-  //   }
-
-
-  //   componentDidMount() {
-
-  //   }
-
-  //   componentDidUpdate(prevProps) {
-
-  //   }
 
   render() {
     const { phone } = this.props
@@ -94,6 +73,10 @@ class Index extends React.Component {
       </MainPage>
     )
   }
+}
+
+Index.propTypes = {
+  phone: PropTypes.string,
 }
 
 export default Index

@@ -1,5 +1,5 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import ReactPlayer from 'react-player'
 import styled from 'styled-components'
 import { Container, Row, Col } from '@bootstrap-styled/v4'
@@ -62,7 +62,7 @@ const HostelOnWheels = ({ buttonText }) => {
 }
 
 HostelOnWheels.propTypes = {
-
+  buttonText: PropTypes.string, 
 }
 
 export default HostelOnWheels

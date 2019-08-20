@@ -1,5 +1,4 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import { Container, Row, Col } from '@bootstrap-styled/v4'
@@ -20,7 +19,6 @@ const contentStyle = {
 
 const Nav = styled.nav`
     background: #002b5d;
-    /* display: ${props => props.visible ? 'flex' : 'none'}; */
     display: flex;
     transition: transform 0.3s ease-out;
     transform: translateY(0);
