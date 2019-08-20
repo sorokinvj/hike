@@ -18,7 +18,7 @@ const MainPage = styled.div`
     }
   }
   .player-wrap {
-    margin: 0 auto;
+    margin: 3rem auto 0;
     width: 640px;
     height: 360px;
     @media (max-width: 375px){
@@ -54,7 +54,7 @@ class Index extends React.Component {
     const { phone } = this.props
     return (
       <MainPage>
-        {phone === null && <Logo/>}
+        {phone === null && <Logo center />}
         <div className="player-wrap">
           <ReactPlayer 
             url='https://www.youtube.com/watch?v=pgm-LWY7BLU' 
