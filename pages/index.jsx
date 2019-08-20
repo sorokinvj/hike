@@ -1,9 +1,9 @@
 // core libs
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 import ReactPlayer from 'react-player'
 import styled from 'styled-components'
-import Logo from '../components/Logo'
+import Logo from '../components/navbar/Logo'
 
 const MainPage = styled.div`
   background: #030E47;
@@ -49,32 +49,12 @@ const MainPage = styled.div`
 
 
 class Index extends React.Component {
-//   static propTypes = {
-//   }
-
-//   static defaultProps = {
-//   }
-
-
-//   static async getInitialProps(ctx) {
-//     // получаем все необходимое для рендеринга компонента от сервера
-
-//     return { };
-//   }
-
-
-//   componentDidMount() {
-
-//   }
-
-//   componentDidUpdate(prevProps) {
-
-//   }
 
   render() {
+    const { phone } = this.props
     return (
       <MainPage>
-        <Logo/>
+        {phone === null && <Logo/>}
         <div className="player-wrap">
           <ReactPlayer 
             url='https://www.youtube.com/watch?v=pgm-LWY7BLU' 
@@ -91,10 +71,12 @@ class Index extends React.Component {
           </p>
         </div>
       </MainPage>
-    );
+    )
   }
 }
 
+Index.propTypes = {
+  phone: PropTypes.string,
+}
 
-
-export default Index;
+export default Index
