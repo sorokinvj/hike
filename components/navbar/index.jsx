@@ -19,10 +19,17 @@ const contentStyle = {
 }
 
 const Nav = styled.nav`
-    background: transparent;
+    background: #002b5d;
+    /* display: ${props => props.visible ? 'flex' : 'none'}; */
     display: flex;
+    transition: transform 0.3s ease-out;
+    transform: translateY(0);
+    &.collapsed {
+      transform:translateY(-8rem); 
+    }
     z-index: 1;
-    position: absolute;
+    height: auto;
+    position: fixed;
     top: 0;
     width: 100%;
     .popup-overlay {
@@ -40,35 +47,67 @@ const Nav = styled.nav`
     }
 `
 
-const index = () => {
-  return (
-    <Nav>
-      <Container>
-        <Row>
-          <Col xs={12}>
-            <div className="brand-contain">
-              <Logo />
-              <Menu />
-              {/* burger button and mobile menu */}
-              <Popup
-                modal
-                closeOnDocumentClick
-                contentStyle={contentStyle}
-                trigger={open => <Burger open={open} />}
-                position="top right"
-              >
-                {close => <Menu close={close} />}
-              </Popup>
-            </div>
-          </Col>
-        </Row>
-      </Container>
-    </Nav>
-  )
+class Navbar extends React.Component {
+  
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      visible: false
+    }
+  }
+
+  render() {
+
+    const { visible } = this.state
+    return  (
+      <Nav visible={visible} className={!visible && 'collapsed'}>
+        <Container>
+          <Row>
+            <Col xs={12}>
+              <div className="brand-contain">
+                <Logo />
+                <Menu />
+                {/* burger button and mobile menu */}
+                <Popup
+                  modal
+                  closeOnDocumentClick
+                  contentStyle={contentStyle}
+                  trigger={open => <Burger open={open} />}
+                  position="top right"
+                >
+                  {close => <Menu close={close} />}
+                </Popup>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </Nav>
+    )
+  }
+
+  componentDidMount() {
+    this.setState({
+      prevScrollpos: window.pageYOffset,
+    })
+    window.addEventListener("scroll", this.handleScroll)
+  }
+  
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll)
+  }
+
+  handleScroll = () => {  
+    const currentScrollPos = window.pageYOffset
+    const visible = currentScrollPos > 500  
+    this.setState({
+      visible
+    })
+  };
 }
 
 // index.propTypes = {
 
 // }
 
-export default index
+export default Navbar
