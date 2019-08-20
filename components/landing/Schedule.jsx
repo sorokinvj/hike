@@ -10,6 +10,11 @@ import Day from './Day'
 const Styled = styled.div`
 
     padding: 10rem 0;
+    @media (max-width: 415px) {
+      h1 {
+        width: 90%;
+      }
+    }
 
 `
 const Schedule = ({ title, route, phone, buttonText}) => {

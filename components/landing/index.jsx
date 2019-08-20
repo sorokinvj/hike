@@ -43,7 +43,9 @@ const index = ({ page: { data }, phone }) => {
             <Lifeonthemove 
               phone={phone}
             />
-            <HostelOnWheels />
+            <HostelOnWheels 
+              buttonText={button_call_to_action_1}
+            />
         </>
   )
 }
