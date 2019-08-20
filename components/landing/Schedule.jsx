@@ -12,7 +12,7 @@ const Styled = styled.div`
     padding: 10rem 0;
 
 `
-const Schedule = ({ title, route, phone, bookText}) => {
+const Schedule = ({ title, route, phone, buttonText}) => {
   return (
     <Styled>
       <Container theme={phone !== null && {'$grid-gutter-width': '0px'}}>
@@ -27,7 +27,7 @@ const Schedule = ({ title, route, phone, bookText}) => {
       </Container>
       <Container>
         <BookButton>
-          {bookText}
+          {buttonText}
         </BookButton>
       </Container>
     </Styled>
@@ -37,7 +37,7 @@ const Schedule = ({ title, route, phone, bookText}) => {
 Schedule.propTypes = {
   title: PropTypes.string,
   phone: PropTypes.string,
-  bookText: PropTypes.string,
+  buttonText: PropTypes.string,
   route: PropTypes.arrayOf(PropTypes.shape({
     highlight_title: PropTypes.arrayOf(PropTypes.shape({
       text: PropTypes.string
