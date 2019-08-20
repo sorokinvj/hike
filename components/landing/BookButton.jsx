@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import Button from '../style/Button'
 import Popup from 'reactjs-popup'
 import BookPopup from './BookPopup'
+import { logEvent } from '../analytics'
 
 const contentStyle = {
   position: 'relative',
@@ -27,6 +28,10 @@ class BookButton extends React.Component {
     callPopup = () => {
       this.setState({
         popupIsActive: true
+      })
+      logEvent({
+        category: 'Landing',
+        action: 'Clicked on Book Now'
       })
     }
 

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Input from '../style/Input'
 import Error from '../style/Error'
 import Button from '../style/Button'
+import { logEvent } from '../analytics'
 
 
 const Styled = styled.div`
@@ -18,7 +19,12 @@ const EmailForm = ({ status, message, onValidated }) => {
       email.value.indexOf("@") > -1 &&
       onValidated({
         EMAIL: email.value,
+      }) &&
+      logEvent({
+        category: 'Landing',
+        action: 'Left an email'
       })
+
   let color = 'radial-gradient(134.57px at 50.2% -20.24%, #70BAFF 0%, #1B91FD 100%)'
   if (status === "error") {
     color = null

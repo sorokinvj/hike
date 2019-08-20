@@ -1,5 +1,7 @@
 import App, { Container } from 'next/app'
 import React from 'react'
+import Router from 'next/router'
+import { initGA, logPageView } from '../components/analytics'
 import BootstrapProvider from '@bootstrap-styled/provider/lib/BootstrapProvider'
 import Footer from '../components/footer'
 import GeneralHead from '../components/GeneralHead'
@@ -46,6 +48,13 @@ class MyApp extends App {
       </Container>
     )
   }
+
+  componentDidMount () {
+    initGA()
+    logPageView()
+    Router.router.events.on('routeChangeComplete', logPageView)
+  }
+  
 }
 
 export default MyApp

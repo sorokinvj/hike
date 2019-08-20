@@ -21,7 +21,8 @@ const Map = ({ mapUrl, phone  }) => {
 }
 
 Map.propTypes = {
-  map: PropTypes.string.isRequired
+  mapUrl: PropTypes.string.isRequired,
+  phone: PropTypes.string
 }
 
 export default Map
