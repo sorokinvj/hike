@@ -32,6 +32,7 @@ const index = ({ page: { data }, phone }) => {
             />
             <Map 
               mapUrl={phone !== null ? map.mob.url : map.url}
+              phone={phone}
             />
             <Schedule 
               title={schedule_title[0].text}

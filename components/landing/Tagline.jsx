@@ -13,6 +13,11 @@ const Section = styled.div`
     button {
       margin-top: 6rem;
     }
+    @media (max-width: 415px) {
+      h1 {
+        width: 80%;
+      }
+    }
 
 `
 
