@@ -9,7 +9,8 @@ export const logPageView = () => {
   ReactGA.pageview(window.location.pathname)
 }
 
-export const logEvent = (category, action) => {
+export const logEvent = ({category, action}) => {
+  console.log(`Log '${action}' in category '${category}'` )
   if (category && action) {
     ReactGA.event({ category, action })
   }
