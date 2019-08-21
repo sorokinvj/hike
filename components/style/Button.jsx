@@ -25,10 +25,10 @@ const Styled = styled.button`
     }
 `
 
-const Button = props => {
+const Button = ({ type, color, children, onClick }) => {
   return (
-    <Styled onClick={props.onClick} color={props.color}>
-      {props.children}
+    <Styled color={color} type={type} onClick={onClick}>
+      {children}
     </Styled>
   )
 }

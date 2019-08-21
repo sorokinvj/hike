@@ -4,7 +4,9 @@ import styled from 'styled-components'
 import Button from '../style/Button'
 import Popup from 'reactjs-popup'
 import BookPopup from './BookPopup'
+
 import { logEvent } from '../analytics'
+import ReactPixel from 'react-facebook-pixel'
 
 const contentStyle = {
   position: 'relative',
@@ -33,6 +35,7 @@ class BookButton extends React.Component {
         category: 'Landing',
         action: 'Clicked on Book Now'
       })
+      ReactPixel.track( 'InitiateCheckout' ) 
     }
 
     close = () => {
