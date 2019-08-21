@@ -2,6 +2,8 @@ import App, { Container } from 'next/app'
 import React from 'react'
 import Router from 'next/router'
 import { initGA, logPageView } from '../components/analytics'
+import ReactPixel from 'react-facebook-pixel'
+
 import BootstrapProvider from '@bootstrap-styled/provider/lib/BootstrapProvider'
 import Footer from '../components/footer'
 import GeneralHead from '../components/GeneralHead'
@@ -50,11 +52,21 @@ class MyApp extends App {
   }
 
   componentDidMount () {
+
+    // Google Analytics
     initGA()
     logPageView()
     Router.router.events.on('routeChangeComplete', logPageView)
-  }
-  
+
+    // Facebook Pixel
+    const advancedMatching = { em: 'hello@hiketrips.com' }
+    const options = {
+      autoConfig: true, 	// set pixel's autoConfig
+      debug: false, 		// enable logs
+    }
+    ReactPixel.init('2486379881424106', advancedMatching, options)
+    ReactPixel.pageView() 
+  } 
 }
 
 export default MyApp
