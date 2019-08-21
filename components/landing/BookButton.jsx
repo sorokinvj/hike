@@ -28,14 +28,14 @@ class BookButton extends React.Component {
     }
 
     callPopup = () => {
-      this.setState({
-        popupIsActive: true
-      })
       logEvent({
         category: 'Landing',
         action: 'Clicked on Book Now'
       })
       ReactPixel.track( 'InitiateCheckout' ) 
+      this.setState({
+        popupIsActive: true
+      })
     }
 
     close = () => {
