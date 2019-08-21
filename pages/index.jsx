@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import ReactPlayer from 'react-player'
 import styled from 'styled-components'
 import Logo from '../components/navbar/Logo'
+import Head from 'next/head'
 
 const MainPage = styled.div`
   background: #030E47;
@@ -54,6 +55,7 @@ class Index extends React.Component {
     const { phone } = this.props
     return (
       <MainPage>
+        <Head><meta name="google-site-verification" content="SIn9A-KaSpuFc3X0Okk1BQxQIA1qPpn8lOHCyeOHks4" /></Head>
         {phone === null && <Logo center />}
         <div className="player-wrap">
           <ReactPlayer 
