@@ -23,48 +23,36 @@ const Styled = styled.div`
 
 class BookButton extends React.Component {
 
-    state = {
-      popupIsActive: false
-    }
+  render() {
+    return (
+      <Styled>
+        <Popup
+          trigger={        
+            <Button>
+              {this.props.children}
+            </Button>}
+          onOpen={this.callPopup}
+          modal
+          lockScroll
+          closeOnDocumentClick
+          closeOnEscape
+          contentStyle={contentStyle}
+        >
+          {close => (
+            <BookPopup close={close} />
+          )}
+        </Popup>
+      </Styled>
+    )
+  }
 
-    callPopup = () => {
-      logEvent({
-        category: 'Landing',
-        action: 'Clicked on Book Now'
-      })
-      ReactPixel.track( 'InitiateCheckout' ) 
-      this.setState({
-        popupIsActive: true
-      })
-    }
-
-    close = () => {
-      this.setState({
-        popupIsActive: false
-      })
-    }
-
-    render() {
-      return (
-        <Styled>
-          <Popup
-            trigger={        
-              <Button onClick={this.callPopup}>
-                {this.props.children}
-              </Button>}
-            modal
-            lockScroll
-            closeOnDocumentClick
-            closeOnEscape
-            contentStyle={contentStyle}
-          >
-            {close => (
-              <BookPopup close={close} />
-            )}
-          </Popup>
-        </Styled>
-      )
-    }
+  callPopup = () => {
+    logEvent({
+      category: 'Landing',
+      action: 'Clicked on Book Now'
+    })
+    ReactPixel.track( 'InitiateCheckout' ) 
+  }
 }
 
 BookButton.propTypes = {
