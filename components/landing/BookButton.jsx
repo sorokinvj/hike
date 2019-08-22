@@ -11,7 +11,7 @@ import ReactPixel from 'react-facebook-pixel'
 const contentStyle = {
   position: 'relative',
   height: '96%',
-  width: '92%',
+  width: 'auto',
   border: '0',
   padding: '0',
   overflowY: 'scroll'

@@ -4,7 +4,6 @@ import styled from 'styled-components'
 
 import { Container, Row, Col } from '@bootstrap-styled/v4'
 import H1 from '../style/H1'
-import BookButton from './BookButton'
 
 const Styled = styled.div`
     display: flex;
@@ -56,9 +55,6 @@ const ExperienceFacts = ({ title, facts, buttonText }) => {
                 </div>
               ))}
             </div>
-            {/* <BookButton>
-              {buttonText}
-            </BookButton> */}
           </Styled>
         </Col>
       </Row>

@@ -55,7 +55,8 @@ class EmailForm extends React.Component {
     )
   }
 
-  submitForm = () => {
+  submitForm = (e) => {
+    e.preventDefault()
     const { onValidated } = this.props
     const { emailValue } = this.state
     console.log(event.target)
