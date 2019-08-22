@@ -9,7 +9,7 @@ import Logo from './Logo'
 
 const contentStyle = {
   position: 'relative',
-  background: 'rgba(255, 255, 255, 0.7)',
+  background: 'rgba(3, 14, 71, 0.51)',
   width: '100%',
   height: '100%',
   margin: '0 0 0 auto',
@@ -18,13 +18,13 @@ const contentStyle = {
 }
 
 const Nav = styled.nav`
-    background: #002b5d;
+    background: ${props => props.theme["$darkblue"]};
     display: flex;
-    transition: transform 0.3s ease-out;
+    /* transition: transform 0.3s ease-out;
     transform: translateY(0);
     &.collapsed {
       transform:translateY(-8rem); 
-    }
+    } */
     z-index: 1;
     height: auto;
     position: fixed;
@@ -41,36 +41,31 @@ const Nav = styled.nav`
         padding: 2rem 0;
     }
     .brand-contain > .menu {
-            display: none;
-    }
+      display: none;
+      @media (min-width: 415px) {
+        display: flex;
+      }
+  }
 `
 
 class Navbar extends React.Component {
-  
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      visible: false
-    }
-  }
 
   render() {
 
-    const { visible } = this.state
     return  (
-      <Nav visible={visible} className={!visible && 'collapsed'}>
+      <Nav>
         <Container>
           <Row>
-            <Col xs={12}>
+            <Col xs={12} md={12}>
               <div className="brand-contain">
-                <Logo />
+                <Logo white />
                 <Menu />
                 {/* burger button and mobile menu */}
                 <Popup
                   modal
                   closeOnDocumentClick
                   contentStyle={contentStyle}
+                  overlayStyle={{background: 'transparent'}}
                   trigger={open => <Burger open={open} />}
                   position="top right"
                 >
@@ -83,25 +78,6 @@ class Navbar extends React.Component {
       </Nav>
     )
   }
-
-  componentDidMount() {
-    this.setState({
-      prevScrollpos: window.pageYOffset,
-    })
-    window.addEventListener("scroll", this.handleScroll)
-  }
-  
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this.handleScroll)
-  }
-
-  handleScroll = () => {  
-    const currentScrollPos = window.pageYOffset
-    const visible = currentScrollPos > 500  
-    this.setState({
-      visible
-    })
-  };
 }
 
 // index.propTypes = {

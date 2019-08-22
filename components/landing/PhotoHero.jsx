@@ -14,8 +14,10 @@ const Hero = styled.div`
     padding-top: 20rem;
 
     h1 {
-        margin: 4rem auto 0 auto;
-        color: white;
+      margin: 0 auto;
+      color: white;
+      font-family: 'Fira Sans';
+      font-weight: 500;
     }
 `
 
@@ -23,7 +25,6 @@ const PhotoHero = ({ photo, title }) => {
   return (
     <Hero back={photo}>
       <SquaredTitle>
-        <Logo center/>
         <H1>
           {title}
         </H1>

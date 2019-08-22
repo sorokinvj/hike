@@ -35,7 +35,7 @@ const GlobalStyle = createGlobalStyle`
 
 export const theme = {
   '$grid-gutter-width': '30px',
-  "$darkblue": '#002B5D',
+  "$darkblue": '#030E47',
   "$red": '#FF0046'
 }
 

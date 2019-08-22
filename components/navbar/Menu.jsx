@@ -1,7 +1,7 @@
-import React from 'react';
-import Link from 'next/link';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import React from 'react'
+import Link from 'next/link'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
 const Links = styled.div`
   display: flex;
@@ -9,21 +9,31 @@ const Links = styled.div`
     list-style: none;
     display: flex;
     flex-direction: column;
+    @media (min-width: 415px) {
+      flex-direction: row;
+      margin: 0;
+    }
     text-align: right;
     margin: 8.5rem 1.5rem 0 auto;
 
     li {
-      color: ${props => props.theme['$darkblue']};
+      color: white;
       font-size: 1.6rem;
       line-height: 2.3rem;
       text-transform: uppercase;
       display: inline-block;
       letter-spacing: 1px;
       margin-bottom: 1.5rem;
+      @media (min-width: 415px) {
+        margin: 0 2rem 0 0;
+        font-size: 1.4rem;
+        letter-spacing: 0.7px;
+        font-weight: 100;
+      }
       font-family: 'Helvetica';
     }
   }
-`;
+`
 
 
 const Menu = () => (
@@ -49,9 +59,9 @@ const Menu = () => (
           <li>Spiritual tour</li>
         </a>
       </Link>
-      <Link href="/tour/music">
+      <Link href="/tour/classic">
         <a>
-          <li>Music tour</li>
+          <li>Classic tour</li>
         </a>
       </Link>
       <Link href="/about">
@@ -61,12 +71,12 @@ const Menu = () => (
       </Link>
     </ul>
   </Links>
-);
+)
 
 Menu.propTypes = {
-};
+}
 
 Menu.defaultProps = {
-};
+}
 
-export default Menu;
+export default Menu

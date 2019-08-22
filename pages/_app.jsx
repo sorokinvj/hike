@@ -42,7 +42,7 @@ class MyApp extends App {
       <Container>
         <BootstrapProvider reset theme={theme}>
           <GlobalStyle />
-          {phone !== null && <Navbar />}
+          <Navbar />
           <GeneralHead />
           <Component {...pageProps} phone={phone} tablet={tablet} />
           <Footer />

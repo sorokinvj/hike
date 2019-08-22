@@ -11,10 +11,15 @@ const LogoStyled = styled.div`
     margin: ${props => props.center ? '0 auto' : '0'};
 `
 
-const Logo = ({ center }) => {
+const Logo = ({ center, white, black }) => {
   return (
     <LogoStyled center={center}>
-      <img src="/static/logo_white.svg" />
+      {white &&
+        <img src="/static/logo_white.svg" />
+      }
+      {black &&
+        <img src="/static/logo_black.svg" />
+      }
     </LogoStyled>
   )
 }

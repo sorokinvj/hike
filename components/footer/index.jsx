@@ -5,53 +5,73 @@ import Logo from '../navbar/Logo'
 import Menu from '../navbar/Menu'
 
 const Styled = styled.div`
-    padding: 8rem 0 10rem;
-    background: ${props => props.theme['$darkblue']};
+  padding: 8rem 0 10rem;
+  background: ${props => props.theme['$darkblue']};
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .menu {
+    margin: 6rem 0;
+    ul {
+      margin: 0 auto;
+      text-align: center;
+      li {
+        color: white;
+      }
+    }
+  }
+  .motto {
+    margin: 0;
+    font-family: Agrandir Variable;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.2rem;
+    line-height: 2.3rem;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    color: white;
+  }
+  .copyright, .contacts {
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 14px;
+    text-align: center;
+    color: white;
+    margin-top: 4rem;
+  }
+  .contacts {
+    font-size: 14px;
+    line-height: 18px;
 
-    img {
+    a {
+      color: white;
+      text-decoration: underline;
     }
-
-    .menu {
-        margin: 6rem 0;
-        ul {
-            margin: 0 auto;
-            text-align: center;
-            li {
-                color: white;
-            }
-        }
-    }
-    .motto {
-        margin: 0;
-        font-family: Agrandir Variable;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 1.2rem;
-        line-height: 2.3rem;
-        text-align: center;
-        color: white;
-    }
-    .copyright {
-        font-family: Helvetica;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 10px;
-        line-height: 14px;
-        text-align: center;
-        color: white;
-    }
+  }
+  .menu {
+    margin: 4rem 0 0 0;
+  }
 `
 
 const index = () => {
   return (
     <Styled>
-      <Logo />
+      <Logo white />
       <p className="motto">Life on the move</p>
       <Menu />
+      <p className="contacts">
+        <a href="mailto:hello@hiketrips.com">
+          hello@hiketrips.com
+        </a>
+      </p>
+      <p className="contacts">
+        Rua do Grilo 135, 1950-144
+        <br/>
+        Lisbon, Portugal
+      </p>
       <p className="copyright">All rights reserved (c) 2019 <br />Hiketrips.com</p>
     </Styled>
   )
