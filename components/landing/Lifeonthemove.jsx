@@ -35,7 +35,7 @@ const Lifeonthemove = ({ phone }) => {
       <SquaredTitle>
         <H2>Life on the move</H2>
         <p className="body">
-          Get the most out of Europe by covering huge distances at night while sleeping in our super comfortable bus
+          Do you love the sense of being on the move? Get the most out of Europe and save time by moving while you sleep our super cosy bus
         </p>
       </SquaredTitle>
     </Styled>

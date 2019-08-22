@@ -36,10 +36,10 @@ const BookPopup = ({ close }) => {
                 Reserve your spot on Hike trip next Spring
             </H1>
             <p className="body">
-                We currently design the trip and you have a chance to reserve a place in our super duper bus only for 100 euro. Or you could just leave your email and we notify when we will ready to sell normal ticket
+            We currently design the trip and very soon we will launch a booking system, so you have a chance to reserve a place in our super duper bus only for 100 euro.
             </p>
             <H2>
-                Sales starts soon! Leave your email and receive 10% discount when we ready
+              Leave your email and we notify when we will ready to sell normal ticket            
             </H2>
             <EmailCollector />
           </Styled>

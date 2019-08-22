@@ -42,7 +42,7 @@ const Nav = styled.nav`
     }
     .brand-contain > .menu {
       display: none;
-      @media (min-width: 415px) {
+      @media (min-width: 769px) {
         display: flex;
       }
   }

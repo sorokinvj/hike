@@ -34,8 +34,7 @@ const HostelOnWheels = ({ buttonText }) => {
               </H1>
               <img src="/static/small_bus.png" alt="Hike bus" />
               <p className="body">
-                  We have everything you exprect in normal hostel, except that all facilities are orginized in slightly different way: there are beds in the bus, kitchen, toilet and even a bar!, but shower  –  and there is some explanation how are we gonna partner with Homes place or Nomad around showers
-              </p>
+                The first organized tour of its kind, where you travel while never changing your accommodation!  Our luxury hostel bus is equipped with comfortable beds, kitchen, two lounges, and even a bar!  If getting the most out of your trip and travelling with likeminded people is important to you, sign up today!              </p>
               <H1>
                   Take a virtual tour of Hike bus
               </H1>

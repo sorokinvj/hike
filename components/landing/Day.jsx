@@ -25,30 +25,12 @@ const Styled = styled.div`
     .body {
         padding: 1.5rem;
     }
-    
-    /* .day {
-        background: radial-gradient(33.00px at 50% 0%, #FF3E72 0%, #FF0046 100%);
-        color: white;
-        font-family: Fira Sans Extra Condensed;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 20px;
-        line-height: 24px;
-        text-align: center;
-        color: #FFFFFF;
-        text-transform: uppercase;
-        width: 7.2rem;
-        position: absolute;
-        top: -1.8rem;
-        left: 1.5rem;
-        padding: 0.6rem 0;
-    } */
 `
 
 
 const Day = ({ day }) => {
   return (
-    <Col xs={12} md={4}>
+    <Col xs={12} md={6} lg={4}>
       <Styled background={day.highlight_img.url}>
         <div className="back">
           <H2>
