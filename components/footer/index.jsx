@@ -1,5 +1,5 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import Logo from '../navbar/Logo'
 import Menu from '../navbar/Menu'
@@ -56,12 +56,12 @@ const Styled = styled.div`
   }
 `
 
-const index = () => {
+const index = ({ page }) => {
   return (
     <Styled>
       <Logo white />
       <p className="motto">Life on the move</p>
-      <Menu />
+      {page !== '/' && <Menu />}
       <p className="contacts">
         <a href="mailto:hello@hiketrips.com">
           hello@hiketrips.com
@@ -77,8 +77,8 @@ const index = () => {
   )
 }
 
-// index.propTypes = {
-
-// }
+index.propTypes = {
+  page: PropTypes.string
+}
 
 export default index

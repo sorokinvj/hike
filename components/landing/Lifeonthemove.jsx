@@ -31,7 +31,7 @@ const Lifeonthemove = ({ phone }) => {
     : "url('/static/lifeonthemove_back_desktop.png')"
   return (
 
-    <Styled back={back}>
+    <Styled back={back} id="move">
       <SquaredTitle>
         <H2>Life on the move</H2>
         <p className="body">

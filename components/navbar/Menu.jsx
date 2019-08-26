@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const Links = styled.div`
@@ -39,47 +39,33 @@ const Links = styled.div`
 `
 
 
-const Menu = () => (
+const Menu = ({ visible }) => (
   <Links className="menu">
     <ul>
-      <Link href="/#home">
+      <Link href="#route">
         <a>
-          <li>Home</li>
+          <li>Route details</li>
         </a>
       </Link>
-      <Link href="/tour/wine">
+      <Link href="#move">
         <a>
-          <li>Wine tour</li>
+          <li>Life on the move</li>
         </a>
       </Link>
-      <Link href="/tour/nature">
+      <Link href="#virtual_tour">
         <a>
-          <li>Nature tour</li>
-        </a>
-      </Link>
-      <Link href="/tour/spiritual">
-        <a>
-          <li>Spiritual tour</li>
-        </a>
-      </Link>
-      <Link href="/tour/classic">
-        <a>
-          <li>Classic tour</li>
-        </a>
-      </Link>
-      <Link href="/about">
-        <a>
-          <li>About</li>
+          <li>Virtual tour</li>
         </a>
       </Link>
     </ul>
   </Links>
 )
 
-Menu.propTypes = {
-}
+// Menu.propTypes = {
+  
+// }
 
-Menu.defaultProps = {
-}
+// Menu.defaultProps = {
+// }
 
 export default Menu

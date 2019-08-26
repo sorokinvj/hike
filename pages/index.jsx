@@ -65,13 +65,6 @@ class Index extends React.Component {
             height='100%'
           />
         </div>
-        <div className="center-text">
-          <p>
-            <a href="mailto:hello@hiketrips.com">
-              hello@hiketrips.com
-            </a>
-          </p>
-        </div>
       </MainPage>
     )
   }

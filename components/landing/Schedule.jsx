@@ -19,7 +19,7 @@ const Styled = styled.div`
 `
 const Schedule = ({ title, route, phone, buttonText}) => {
   return (
-    <Styled>
+    <Styled id="route">
       <Container theme={phone !== null && {'$grid-gutter-width': '0px'}}>
         <Row>
           <Col xs={12} md={{offset: 3, size: 6}}>

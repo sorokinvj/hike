@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 import { Container, Row, Col } from '@bootstrap-styled/v4'
 import Popup from 'reactjs-popup'
@@ -51,15 +52,15 @@ const Nav = styled.nav`
 class Navbar extends React.Component {
 
   render() {
-
+    const { page } = this.props
     return  (
       <Nav>
         <Container>
           <Row>
             <Col xs={12} md={12}>
               <div className="brand-contain">
-                <Logo white />
-                <Menu />
+                {page !== '/' && <Logo white />}
+                {page !== '/' && <Menu />}
                 {/* burger button and mobile menu */}
                 <Popup
                   modal
@@ -80,8 +81,8 @@ class Navbar extends React.Component {
   }
 }
 
-// index.propTypes = {
-
-// }
+Navbar.propTypes = {
+  page: PropTypes.string
+}
 
 export default Navbar

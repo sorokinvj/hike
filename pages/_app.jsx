@@ -35,17 +35,16 @@ class MyApp extends App {
 
   render() {
     const {
-      Component, pageProps, phone, tablet,
+      Component, pageProps, phone, tablet, router
     } = this.props
-    
     return (
       <Container>
         <BootstrapProvider reset theme={theme}>
           <GlobalStyle />
-          <Navbar />
+          <Navbar page={router.asPath} />
           <GeneralHead />
           <Component {...pageProps} phone={phone} tablet={tablet} />
-          <Footer />
+          <Footer page={router.asPath} />
         </BootstrapProvider>
       </Container>
     )

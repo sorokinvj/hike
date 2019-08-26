@@ -20,7 +20,6 @@ class Index extends React.Component {
     const  { response, phone } = this.props
     return (
       <Landing 
-        id="general" 
         page={response.results[0]}
         phone={phone}
       />
