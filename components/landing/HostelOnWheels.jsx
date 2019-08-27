@@ -17,9 +17,10 @@ const Styled = styled.div`
   h1 {
     margin-top: 10rem;
   }
-  button {
-    margin: 6rem 0;
-  }
+
+`
+const PlayerContainer = styled.div`
+  margin-bottom: 6rem;
 `
 
 const HostelOnWheels = ({ buttonText }) => {
@@ -43,13 +44,15 @@ const HostelOnWheels = ({ buttonText }) => {
           </Col>
         </Row>
       </Container>
-      <ReactPlayer 
-        url='https://www.facebook.com/AbsoluteTouring/videos/924974071042786/' 
-        width='100%'
-        height='100%'
-        muted
-        controls
-      />
+      <PlayerContainer>
+        <ReactPlayer 
+          url='https://www.facebook.com/AbsoluteTouring/videos/924974071042786/' 
+          width='100%'
+          height='100%'
+          muted
+          controls
+        />
+      </PlayerContainer>
       <Container>
         <Styled>
           <BookButton>
