@@ -68,8 +68,6 @@ const index = ({ page }) => {
         </a>
       </p>
       <p className="contacts">
-        Rua do Grilo 135, 1950-144
-        <br/>
         Lisbon, Portugal
       </p>
       <p className="copyright">All rights reserved (c) 2019 <br />Hiketrips.com</p>

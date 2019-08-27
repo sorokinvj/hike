@@ -22,11 +22,10 @@ const Hero = styled.div`
       font-family: Fira Sans;
       font-weight: 500;
       line-height: 1.5;
-      text-transform: uppercase;
       letter-spacing: 1px;
       font-size: 2.5rem;
       @media (min-width:416px) {
-        font-size: 3rem;
+        font-size: 4rem;
       }
     }
 `

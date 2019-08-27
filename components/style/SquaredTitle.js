@@ -6,7 +6,7 @@ const SquaredTitle = styled.div`
     background: rgba(0,0,0,0.3);
     width: 33rem;
     @media (min-width: 416px) {
-        width: 50rem;
+        width: 60rem;
         padding: 7rem 5rem;
     }
     margin: 0 auto;
