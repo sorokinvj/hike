@@ -19,6 +19,12 @@ const contentStyle = {
 
 const Styled = styled.div`
   text-align: center;
+
+  .limited {
+    color: #FF0046;
+    font-size: 1.6rem;
+    margin-top: 1rem;
+  }
 `
 
 class BookButton extends React.Component {
@@ -27,10 +33,14 @@ class BookButton extends React.Component {
     return (
       <Styled>
         <Popup
-          trigger={        
+          trigger={ 
+            <>       
             <Button>
               {this.props.children}
-            </Button>}
+            </Button>
+            <p className="limited">Limited number of seats</p>
+            </>
+          }
           onOpen={this.callPopup}
           modal
           lockScroll
