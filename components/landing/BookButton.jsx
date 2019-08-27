@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import Button from '../style/Button'
+import ButtonwithTextBelow from '../style/ButtonwithTextBelow'
 import Popup from 'reactjs-popup'
 import BookPopup from './BookPopup'
 
@@ -19,12 +19,6 @@ const contentStyle = {
 
 const Styled = styled.div`
   text-align: center;
-
-  .limited {
-    color: #FF0046;
-    font-size: 1.6rem;
-    margin-top: 1rem;
-  }
 `
 
 class BookButton extends React.Component {
@@ -33,13 +27,10 @@ class BookButton extends React.Component {
     return (
       <Styled>
         <Popup
-          trigger={ 
-            <>       
-            <Button>
+          trigger={  
+            <ButtonwithTextBelow>
               {this.props.children}
-            </Button>
-            <p className="limited">Limited number of seats</p>
-            </>
+            </ButtonwithTextBelow>
           }
           onOpen={this.callPopup}
           modal
