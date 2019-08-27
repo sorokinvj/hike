@@ -24,6 +24,11 @@ const GlobalStyle = createGlobalStyle`
     src: url('/static/fonts/agrandir/Agrandir-Regular.otf');
   }
 
+  @font-face {
+    font-family: 'Agrandir Variable';
+    src: url('/static/fonts/agrandir/Agrandir-Variable.ttf');
+  }
+
   p.body {
     font-family: Helvetica;
     font-style: normal;
