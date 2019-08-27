@@ -16,8 +16,11 @@ const Hero = styled.div`
     h1 {
       margin: 0 auto;
       color: white;
-      font-family: 'Fira Sans';
-      font-weight: 500;
+      font-family: Agrandir;
+      font-weight: 400;
+      line-height: 1.5;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 `
 
