@@ -13,15 +13,16 @@ class Index extends React.Component {
       Prismic.Predicates.at('my.landing.uid', pid),
     )
 
-    return { response }
+    return { response, pid }
   }
 
   render() {
-    const  { response, phone } = this.props
+    const  { response, phone, pid } = this.props
     return (
       <Landing 
         page={response.results[0]}
         phone={phone}
+        uid={pid}
       />
     )
   }

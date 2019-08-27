@@ -9,12 +9,20 @@ import Tagline from './Tagline'
 // import Tribe from './Tribe'
 // import VideoHero from './VideoHero'
 import PhotoHero from './PhotoHero'
+import Meta from './Head'
 
-const index = ({ page: { data }, phone }) => {
+const index = ({ page: { data }, phone, uid }) => {
   const { wallpaper, title, describe, map_title, route_description, map, 
-    facts_title, facts, schedule_title, route, button_call_to_action_1} = data
+    facts_title, facts, schedule_title, route, button_call_to_action_1, 
+    description_meta, title_meta} = data
   return (
     <>
+      <Meta 
+        uid={uid}
+        description={description_meta} 
+        title={title_meta}
+        image={wallpaper.url}
+      />
       <PhotoHero 
         photo={phone !== null ? wallpaper.mob.url : wallpaper.url}
         title={title[0].text}
