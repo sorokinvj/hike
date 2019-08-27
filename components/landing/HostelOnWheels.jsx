@@ -30,11 +30,12 @@ const HostelOnWheels = ({ buttonText }) => {
           <Col xs={12} md={{size: 6, offset: 3}}>
             <Styled>
               <H1>
-                  Experience Europe with the first hostel on wheels
+                Experience Europe with the first hostel on wheels. Travel in a small group of 16 people
               </H1>
               <img src="/static/small_bus.png" alt="Hike bus" />
               <p className="body">
-                The first organized tour of its kind, where you travel while never changing your accommodation!  Our luxury hostel bus is equipped with comfortable beds, kitchen, two lounges, and even a bar!  If getting the most out of your trip and travelling with likeminded people is important to you, sign up today!              </p>
+                The first organized tour of its kind, where you travel while never changing your accommodation. Our luxury hostel bus is equipped with comfortable beds, kitchen, two lounges, and even a bar. If getting the most out of your trip and travelling with likeminded people is important to you, sign up today!
+              </p>
               <H1 id="virtual_tour">
                   Take a virtual tour of Hike bus
               </H1>
