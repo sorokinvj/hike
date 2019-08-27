@@ -11,7 +11,10 @@ const Hero = styled.div`
     height: 70rem;
     background: ${props => ('url(' + props.back +')')};
     background-size: cover;
-    padding-top: 20rem;
+    padding-top: 15rem;
+    @media (min-width:416px) {
+      padding-top: 20rem;
+    }
 
     h1 {
       margin: 0 auto;
@@ -21,6 +24,10 @@ const Hero = styled.div`
       line-height: 1.5;
       text-transform: uppercase;
       letter-spacing: 1px;
+      font-size: 2.5rem;
+      @media (min-width:416px) {
+        font-size: 3rem;
+      }
     }
 `
 
