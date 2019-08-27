@@ -27,10 +27,10 @@ const BookPopup = ({ close }) => {
         <Col xs={12} md={{size: 8, offset: 2}} lg={{size: 6, offset:3}}>
           <Styled>
             <H1>
-              Reserve your spot on Hike trip next Spring
+              Reserve your spot for this fall
             </H1>
             <p className="body">
-              We are currently designing the trip details and logistics. Please leave your email and we notify when we will ready to sell normal ticket            
+              We are currently designing the trip details and logistics. Please leave your email and we will keep you up to date once we release the full details of the tour.
             </p>
             <EmailCollector />
           </Styled>
