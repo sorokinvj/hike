@@ -5,7 +5,7 @@ const Meta = ({ uid, description, image, title }) => {
 //   console.log(uid, description, image, title)
   return (
     <Head>
-      <title>Hike trips</title>
+      <title>{title}</title>
       <meta name="description" content={description} />
       <meta property="og:url" content={"http://hiketrips.com/tour/" + uid} />
       <meta property="og:type" content="article" />
