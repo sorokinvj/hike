@@ -2,7 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 
 const Meta = ({ uid, description, image, title }) => {
-  console.log(uid, description, image, title)
+  // console.log(uid, description, image, title)
   return (
     <Head>
       <title>{title}</title>
