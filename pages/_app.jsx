@@ -3,6 +3,8 @@ import React from 'react'
 import Router from 'next/router'
 import { initGA, logPageView } from '../components/analytics'
 import { pixelInit, pageView } from '../components/FacebookPixel'
+import { hotjar } from 'react-hotjar'
+
 import BootstrapProvider from '@bootstrap-styled/provider/lib/BootstrapProvider'
 import Footer from '../components/footer'
 import GeneralHead from '../components/GeneralHead'
@@ -58,6 +60,9 @@ class MyApp extends App {
     // Facebook Pixel
     pixelInit()
     pageView()
+
+    // Hotjar
+    hotjar.initialize(1464852);
     
     Router.router.events.on('routeChangeComplete', logPageView)
   } 
