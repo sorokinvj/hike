@@ -13,7 +13,7 @@ const Styled = styled.div`
 const Map = ({ mapUrl, phone  }) => {
   return (
     <Styled>
-      <Container theme={phone !== null && {'$grid-gutter-width': '0px'}}>
+      <Container theme={phone !== null ? {'$grid-gutter-width': '0px'} : {} }>
         <img src={mapUrl} alt="Hike tour map" />
       </Container>
     </Styled>

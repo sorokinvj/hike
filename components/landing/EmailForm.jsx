@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Input from '../style/Input'
 import Error from '../style/Error'
 import Button from '../style/Button'
-
+import Router from 'next/router'
 import { logEvent } from '../analytics'
 import ReactPixel from 'react-facebook-pixel'
 
@@ -59,10 +59,11 @@ class EmailForm extends React.Component {
     e.preventDefault()
     const { onValidated } = this.props
     const { emailValue } = this.state
-    console.log(event.target)
+    console.log("Router.router.asPath", Router.router.asPath)
     if (emailValue.indexOf("@") > -1) {
       onValidated({
         EMAIL: emailValue,
+        TOUR: Router.router.asPath
       })
     }
     logEvent({
