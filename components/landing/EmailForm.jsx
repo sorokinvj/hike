@@ -59,7 +59,7 @@ class EmailForm extends React.Component {
     e.preventDefault()
     const { onValidated } = this.props
     const { emailValue } = this.state
-    console.log("Router.router.asPath", Router.router.asPath)
+    // console.log("Router.router.asPath", Router.router.asPath)
     if (emailValue.indexOf("@") > -1) {
       onValidated({
         EMAIL: emailValue,

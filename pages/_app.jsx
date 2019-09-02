@@ -62,7 +62,7 @@ class MyApp extends App {
     pageView()
 
     // Hotjar
-    hotjar.initialize(1464852);
+    hotjar.initialize(1464852)
     
     Router.router.events.on('routeChangeComplete', logPageView)
   } 

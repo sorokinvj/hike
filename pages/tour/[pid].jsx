@@ -18,6 +18,7 @@ class Index extends React.Component {
 
   render() {
     const  { response, phone, pid } = this.props
+    // console.log("_app", this.props)
     return (
       <Landing 
         page={response.results[0]}

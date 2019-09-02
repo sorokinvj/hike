@@ -23,6 +23,13 @@ const Styled = styled.div`
 
 class BookButton extends React.Component {
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      numberOfTimesPopupclicked: 0
+    }
+  }
+
   render() {
     return (
       <Styled>
@@ -48,6 +55,18 @@ class BookButton extends React.Component {
   }
 
   callPopup = () => {
+    // чтобы FB и GA не записывали каждое нажатие кнопки (потому что один пользователь может нажать миллион  раз)
+    // я слежу за тем, какое количество раз был вызван попап и запускаю функцию logButtonCall только при первом нажатии
+    const { numberOfTimesPopupclicked } = this.state
+    this.setState({
+      numberOfTimesPopupclicked: numberOfTimesPopupclicked + 1
+    })
+    if (numberOfTimesPopupclicked < 1) {
+      this.logButtonCall()
+    }
+  }
+
+  logButtonCall = () => {
     logEvent({
       category: 'Landing',
       action: 'Clicked on Book Now'
