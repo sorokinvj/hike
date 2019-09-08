@@ -34,6 +34,8 @@ class MyApp extends App {
     }
   }
 
+ 
+
   render() {
     const {
       Component, pageProps, phone, tablet, router
@@ -42,9 +44,9 @@ class MyApp extends App {
       <Container>
         <BootstrapProvider reset theme={theme}>
           <GlobalStyle />
-          <Navbar page={router.asPath} />
           <GeneralHead />
           <Component {...pageProps} phone={phone} tablet={tablet} />
+          <div id="modal-root" />
           <Footer page={router.asPath} />
         </BootstrapProvider>
       </Container>

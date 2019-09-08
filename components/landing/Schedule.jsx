@@ -30,11 +30,6 @@ const Schedule = ({ title, route, phone, buttonText}) => {
           {route.map(day => <Day day={day} key={day.highlight_title[0].text}/>)}
         </Row>
       </Container>
-      <Container>
-        <BookButton>
-          {buttonText}
-        </BookButton>
-      </Container>
     </Styled>
   )
 }

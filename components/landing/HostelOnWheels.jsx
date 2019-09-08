@@ -53,13 +53,6 @@ const HostelOnWheels = ({ buttonText }) => {
           controls
         />
       </PlayerContainer>
-      <Container>
-        <Styled>
-          <BookButton>
-            {buttonText}
-          </BookButton>
-        </Styled>
-      </Container>
     </>
   )
 }

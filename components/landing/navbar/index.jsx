@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
+import BookButton from '../BookButton'
 
 import { Container, Row, Col } from '@bootstrap-styled/v4'
 import Popup from 'reactjs-popup'
@@ -49,40 +50,37 @@ const Nav = styled.nav`
   }
 `
 
-class Navbar extends React.Component {
+const Navbar = ({ buttonText }) => (
+  <Nav>
+    <Container>
+      <Row>
+        <Col xs={12} md={12}>
+          <div className="brand-contain">
+            <Logo white />
+            <Menu />
+            <BookButton>
+              {buttonText}
+            </BookButton>
 
-  render() {
-    const { page } = this.props
-    return  (
-      <Nav>
-        <Container>
-          <Row>
-            <Col xs={12} md={12}>
-              <div className="brand-contain">
-                {page !== '/' && <Logo white />}
-                {page !== '/' && <Menu />}
-                {/* burger button and mobile menu */}
-                <Popup
-                  modal
-                  closeOnDocumentClick
-                  contentStyle={contentStyle}
-                  overlayStyle={{background: 'transparent'}}
-                  trigger={open => <Burger open={open} />}
-                  position="top right"
-                >
-                  {close => <Menu close={close} />}
-                </Popup>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </Nav>
-    )
-  }
-}
+            {/* burger button and mobile menu */}
+            <Popup
+              modal
+              closeOnDocumentClick
+              contentStyle={contentStyle}
+              overlayStyle={{background: 'transparent'}}
+              trigger={open => <Burger open={open} />}
+              position="top right"
+            >
+              {close => <Menu close={close} />}
+            </Popup>
+          </div>
+        </Col>
+      </Row>
+    </Container>
+  </Nav>
+)
 
 Navbar.propTypes = {
-  page: PropTypes.string
 }
 
 export default Navbar

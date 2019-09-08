@@ -1,79 +1,54 @@
-import React from 'react'
+import React, { useState, useContext } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import ButtonwithTextBelow from '../style/ButtonwithTextBelow'
-import Popup from 'reactjs-popup'
 import BookPopup from './BookPopup'
+import ButtonwithTextBelow from '../style/ButtonwithTextBelow'
 
 import { logEvent } from '../analytics'
 import ReactPixel from 'react-facebook-pixel'
 
-const contentStyle = {
-  position: 'relative',
-  height: '96%',
-  width: 'auto',
-  border: '0',
-  padding: '0',
-  overflowY: 'scroll'
-}
+import BookDispatch from './BookDispatch'
+import BookState from './BookState'
 
 const Styled = styled.div`
   text-align: center;
 `
 
-class BookButton extends React.Component {
-
-  constructor(props) {
-    super(props)
-    this.state = {
-      numberOfTimesPopupclicked: 0
-    }
-  }
-
-  render() {
-    return (
-      <Styled>
-        <Popup
-          trigger={  
-            <ButtonwithTextBelow>
-              {this.props.children}
-            </ButtonwithTextBelow>
-          }
-          onOpen={this.callPopup}
-          modal
-          lockScroll
-          closeOnDocumentClick
-          closeOnEscape
-          contentStyle={contentStyle}
-        >
-          {close => (
-            <BookPopup close={close} />
-          )}
-        </Popup>
-      </Styled>
-    )
-  }
-
-  callPopup = () => {
-    // чтобы FB и GA не записывали каждое нажатие кнопки (потому что один пользователь может нажать миллион  раз)
-    // я слежу за тем, какое количество раз был вызван попап и запускаю функцию logButtonCall только при первом нажатии
-    const { numberOfTimesPopupclicked } = this.state
-    this.setState({
-      numberOfTimesPopupclicked: numberOfTimesPopupclicked + 1
-    })
-    if (numberOfTimesPopupclicked < 1) {
-      this.logButtonCall()
-    }
-  }
-
-  logButtonCall = () => {
-    logEvent({
-      category: 'Landing',
-      action: 'Clicked on Book Now'
-    })
-    ReactPixel.track( 'InitiateCheckout' ) 
-  }
+const logButtonCall = () => {
+  console.log("simulate tracking")
+  // logEvent({
+  //   category: 'Landing',
+  //   action: 'Clicked on Book Now'
+  // })
+  // ReactPixel.track( 'InitiateCheckout' ) 
 }
+
+
+const BookButton = ({ children }) => {
+  const [isShown, setIsShown] = useState(false)
+  const hide = () => setIsShown(false)
+  const dispatch = useContext(BookDispatch)
+  const count = useContext(BookState)
+
+  const show = () => {
+    setIsShown(true)
+    console.log("popup clicked more than one time, specifically - ", count)
+    dispatch({type: 'increment'})
+  }
+  return (
+    <Styled>
+      <ButtonwithTextBelow onClick={show}>
+        {children}
+      </ButtonwithTextBelow>
+      {isShown && 
+          <BookPopup 
+            close={hide}
+          />
+      }
+    </Styled>
+  )
+}
+  
 
 BookButton.propTypes = {
   children: PropTypes.oneOfType([
