@@ -32,6 +32,9 @@ const BookButton = ({ children }) => {
 
   const show = () => {
     setIsShown(true)
+    if (count < 1) {
+      logButtonCall()
+    }
     console.log("popup clicked more than one time, specifically - ", count)
     dispatch({type: 'increment'})
   }
