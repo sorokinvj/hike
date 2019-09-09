@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import BookPopup from './BookPopup'
-import ButtonwithTextBelow from '../style/ButtonwithTextBelow'
+import ThanksPopup from './ThanksPopup'
 import Button from '../style/Button'
 
 import { logEvent } from '../analytics'
@@ -18,20 +18,23 @@ const Styled = styled.div`
 
 const logButtonCall = () => {
   console.log("simulate tracking")
-  // logEvent({
-  //   category: 'Landing',
-  //   action: 'Clicked on Book Now'
-  // })
-  // ReactPixel.track( 'InitiateCheckout' ) 
+  logEvent({
+    category: 'Landing',
+    action: 'Clicked on Book Now'
+  })
+  ReactPixel.track( 'InitiateCheckout' ) 
 }
 
 
 const BookButton = ({ children, nav }) => {
-  const [isShown, setIsShown] = useState(false)
-  const hide = () => setIsShown(false)
+
+  // из контекста беру значение переменной "сколько раз кликали на попап"
+  // и функцию увеличения значения этой переменной на  1
   const dispatch = useContext(BookDispatch)
   const count = useContext(BookState)
 
+  const [isShown, setIsShown] = useState(false)
+  const hide = () => setIsShown(false)
   const show = () => {
     setIsShown(true)
     if (count < 1) {
@@ -39,6 +42,11 @@ const BookButton = ({ children, nav }) => {
     }
     dispatch({type: 'increment'})
   }
+  
+  const [thanksIsShown, setThanksShown] = useState(false)
+  const hideThanks = () => setThanksShown(false)
+  const showThanks = () => setThanksShown(true)
+
   return (
     <Styled margin={nav}>
       <Button onClick={show}>
@@ -48,6 +56,12 @@ const BookButton = ({ children, nav }) => {
       {isShown && 
         <BookPopup 
           close={hide}
+          showThanks={showThanks}
+        />
+      }
+      {thanksIsShown && 
+        <ThanksPopup 
+          close={hideThanks}
         />
       }
     </Styled>
@@ -59,7 +73,8 @@ BookButton.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
-  ]).isRequired
+  ]).isRequired,
+  nav: PropTypes.bool
 }
 
 export default BookButton

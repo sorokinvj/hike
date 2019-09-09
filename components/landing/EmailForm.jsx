@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 import Input from '../style/Input'
 import Error from '../style/Error'
 import Button from '../style/Button'
@@ -17,11 +18,13 @@ const Styled = styled.div`
 class EmailForm extends React.Component {
 
   state = {
-    emailValue: ''
+    email: '',
+    firstName: '',
+    lastName: ''
   }
+
   render () {
-    const { status, message, onValidated } = this.props
-    console.log(status, message )
+    const { status, message } = this.props
     let color = 'radial-gradient(134.57px at 50.2% -20.24%, #70BAFF 0%, #1B91FD 100%)'
     if (status === "error") {
       color = null
@@ -33,8 +36,24 @@ class EmailForm extends React.Component {
         <form onSubmit={this.submitForm}>
           <Input
             type="email"
-            placeholder="Type your email"
+            name="email"
+            placeholder="Email"
             onChange={this.handleChange}
+            required
+          />
+          <Input
+            type="text"
+            name="firstName"
+            placeholder="First name"
+            onChange={this.handleChange}
+            required
+          />
+          <Input
+            type="text"
+            name="lastName"
+            placeholder="Last name"
+            onChange={this.handleChange}
+            required
           />
           {status === "error" && (
             <Error 
@@ -50,6 +69,7 @@ class EmailForm extends React.Component {
             {status === "success" && 'Success'}
             {status === null && 'Subscribe'}        
           </Button>
+          {status === "success" && this.sayThanks()}
         </form>
       </Styled>
     )
@@ -58,12 +78,14 @@ class EmailForm extends React.Component {
   submitForm = (e) => {
     e.preventDefault()
     const { onValidated } = this.props
-    const { emailValue } = this.state
+    const { email, firstName, lastName } = this.state
     // console.log("Router.router.asPath", Router.router.asPath)
-    if (emailValue.indexOf("@") > -1) {
+    if (email.indexOf("@") > -1) {
       onValidated({
-        EMAIL: emailValue,
-        TOUR: Router.router.asPath
+        EMAIL: email,
+        TOUR: Router.router.asPath,
+        FIRSTNAME: firstName,
+        LASTNAME: lastName
       })
     }
     logEvent({
@@ -75,9 +97,29 @@ class EmailForm extends React.Component {
 
   handleChange = (e) => {
     this.setState({
-      emailValue: e.target.value
+      [e.target.name]: e.target.value
     })
   }
+
+  sayThanks = () => {
+    const { status, showThanks, closeBookPopup } = this.props
+    if (status === "success") {
+      showThanks()
+      closeBookPopup()
+    }
+  }
+}
+
+EmailForm.propTypes = {
+  status: PropTypes.shape({
+    status: PropTypes.string,
+  }), 
+  message: PropTypes.shape({
+    status: PropTypes.string,
+  }), 
+  onValidated: PropTypes.func.isRequired, 
+  closeBookPopup: PropTypes.func.isRequired, 
+  showThanks: PropTypes.func.isRequired
 }
 
 export default EmailForm

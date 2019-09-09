@@ -16,17 +16,27 @@ const Background = styled.div`
     z-index: 1000;
 `
 const Content = styled.div`
+  @media (min-width: 769px) {
     width: 60%;
-    height: 90%;
-    z-index: 1001;
-    overflow-y: scroll;
-    background: white;
-    position: relative;
+  }
+  @media (max-width: 768px) {
+    width: 90%;
+  }
+  width: 100%;
+  height: 90%;
+  z-index: 1001;
+  overflow-y: scroll;
+  background: white;
+  position: relative;
 `
 
 const Modal = ({ children, close }) => (
   ReactDOM.createPortal(
-    <Background onClick={close}>
+    <Background onClick={e => {
+      if (e.currentTarget.className === e.target.className){
+        close()
+      }
+    }}>
       <Content>
         {children}
       </Content>
