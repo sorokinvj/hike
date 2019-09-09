@@ -9,7 +9,6 @@ import BootstrapProvider from '@bootstrap-styled/provider/lib/BootstrapProvider'
 import Footer from '../components/footer'
 import GeneralHead from '../components/GeneralHead'
 import GlobalStyle from '../components/globals'
-import Navbar from '../components/navbar'
 import MobileDetect from 'mobile-detect'
 import { theme } from '../components/globals'
 

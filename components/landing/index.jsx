@@ -1,6 +1,6 @@
-import React, {useState, useReducer} from 'react'
+import React, { useReducer} from 'react'
 import PropTypes from 'prop-types'
-
+import { Container } from '@bootstrap-styled/v4'
 import Navbar from './navbar/'
 import ExperienceFacts from './ExperienceFacts'
 import HostelOnWheels from './HostelOnWheels'
@@ -8,6 +8,7 @@ import Lifeonthemove from './Lifeonthemove'
 import Map from './Map'
 import Schedule from './Schedule'
 import Tagline from './Tagline'
+
 // import Tribe from './Tribe'
 // import VideoHero from './VideoHero'
 import PhotoHero from './PhotoHero'
@@ -45,7 +46,6 @@ const index = ({ page: { data }, phone, uid }) => {
           image={wallpaper.url}
         />
         <Navbar 
-          counter={counterBookButton}
           buttonText={button_call_to_action_1}
         />
         <PhotoHero 
@@ -56,9 +56,11 @@ const index = ({ page: { data }, phone, uid }) => {
           h1={describe[0].text}
           description={route_description[0].text}
         />
-        <BookButton>
-          {button_call_to_action_1}
-        </BookButton>
+        <Container>
+          <BookButton limited>
+            {button_call_to_action_1}
+          </BookButton>
+        </Container>
         <ExperienceFacts 
           title={facts_title[0].text}
           facts={facts}
@@ -72,9 +74,11 @@ const index = ({ page: { data }, phone, uid }) => {
           route={route}
           phone={phone}
         />
-        <BookButton counter={counterBookButton}>
-          {button_call_to_action_1}
-        </BookButton>
+        <Container>
+          <BookButton limited>
+            {button_call_to_action_1}
+          </BookButton>
+        </Container>
         <Lifeonthemove 
           phone={phone}
         />

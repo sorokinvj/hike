@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 // import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import BookButton from '../BookButton'
 
 const Links = styled.div`
   display: flex;
@@ -9,6 +10,7 @@ const Links = styled.div`
     list-style: none;
     display: flex;
     flex-direction: column;
+    align-items: center;
     @media (min-width: 769px) {
       flex-direction: row;
       margin: 0;
@@ -17,7 +19,7 @@ const Links = styled.div`
       margin: 8.5rem 4rem 0 auto;
     }
     text-align: right;
-    margin: 8.5rem 1.5rem 0 auto;
+    margin: 11rem auto 0;
 
     li {
       color: white;
@@ -26,7 +28,7 @@ const Links = styled.div`
       text-transform: uppercase;
       display: inline-block;
       letter-spacing: 1px;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2.5rem;
       @media (min-width: 769px) {
         margin: 0 2rem 0 0;
         font-size: 1.4rem;
@@ -36,11 +38,22 @@ const Links = styled.div`
       font-family: 'Helvetica';
     }
   }
+  button {
+    padding: 0.8rem 2rem;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    width: 20rem;
+    @media (min-width: 769px) {
+      display: block;
+      margin: 0 0 0 3rem;
+    }
+  }
 `
 
 
-const Menu = ({ visible }) => (
+const Menu = ({ buttonText, noButton }) => (
   <Links className="menu">
+    {console.log('menu', buttonText)}
     <ul>
       <Link href="#route">
         <a>
@@ -57,6 +70,11 @@ const Menu = ({ visible }) => (
           <li>Virtual tour</li>
         </a>
       </Link>
+      {!noButton && 
+      <BookButton>
+        More info
+      </BookButton>
+      }
     </ul>
   </Links>
 )

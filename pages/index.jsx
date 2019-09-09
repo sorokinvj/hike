@@ -3,7 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ReactPlayer from 'react-player'
 import styled from 'styled-components'
-import Logo from '../components/navbar/Logo'
+import Logo from '../components/landing/navbar/Logo'
 import Head from 'next/head'
 
 const MainPage = styled.div`

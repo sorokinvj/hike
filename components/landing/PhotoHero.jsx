@@ -3,7 +3,6 @@ import React from 'react'
 import styled from 'styled-components'
 import H1 from '../style/H1'
 import SquaredTitle from '../style/SquaredTitle'
-import Logo from '../navbar/Logo'
 
 const Hero = styled.div`
     margin: 0 auto;

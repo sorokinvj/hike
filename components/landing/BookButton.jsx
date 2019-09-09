@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import BookPopup from './BookPopup'
 import ButtonwithTextBelow from '../style/ButtonwithTextBelow'
+import Button from '../style/Button'
 
 import { logEvent } from '../analytics'
 import ReactPixel from 'react-facebook-pixel'
@@ -12,6 +13,7 @@ import BookState from './BookState'
 
 const Styled = styled.div`
   text-align: center;
+  margin: ${props => props.limited ? '6rem 0 10rem 0' : '0'};
 `
 
 const logButtonCall = () => {
@@ -24,7 +26,7 @@ const logButtonCall = () => {
 }
 
 
-const BookButton = ({ children }) => {
+const BookButton = ({ children, limited }) => {
   const [isShown, setIsShown] = useState(false)
   const hide = () => setIsShown(false)
   const dispatch = useContext(BookDispatch)
@@ -35,18 +37,25 @@ const BookButton = ({ children }) => {
     if (count < 1) {
       logButtonCall()
     }
-    console.log("popup clicked more than one time, specifically - ", count)
     dispatch({type: 'increment'})
   }
   return (
-    <Styled>
-      <ButtonwithTextBelow onClick={show}>
-        {children}
-      </ButtonwithTextBelow>
+    <Styled limited={limited}>
+      {limited && 
+        <ButtonwithTextBelow onClick={show}>
+          {children}
+        </ButtonwithTextBelow>
+      }
+      {!limited && 
+        <Button onClick={show}>
+          {children}
+        </Button>
+      }
+
       {isShown && 
-          <BookPopup 
-            close={hide}
-          />
+        <BookPopup 
+          close={hide}
+        />
       }
     </Styled>
   )

@@ -7,7 +7,6 @@ import H2 from '../style/H2'
 const Styled = styled.div`
 
     position: relative;
-    margin-bottom: 6rem;
 
     .back {
         background:${props => ("url(" + props.background + ")")};

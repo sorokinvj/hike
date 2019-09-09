@@ -4,7 +4,6 @@ import ReactPlayer from 'react-player'
 import styled from 'styled-components'
 import { Container, Row, Col } from '@bootstrap-styled/v4'
 import H1 from '../style/H1'
-import BookButton from './BookButton'
 
 const Styled = styled.div`
   text-align: center;
@@ -20,7 +19,6 @@ const Styled = styled.div`
 
 `
 const PlayerContainer = styled.div`
-  margin-bottom: 6rem;
 `
 
 const HostelOnWheels = ({ buttonText }) => {
