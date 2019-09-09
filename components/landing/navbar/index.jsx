@@ -28,9 +28,10 @@ const Nav = styled.nav`
   } */
   z-index: 1;
   position: fixed;
-  top: 0;
+  width: 100%;
+  max-width: 100vw;
   .popup-overlay {
-      height: 50vh;
+    height: 50vh;
   }
   .brand-contain {
     display: flex;
@@ -49,28 +50,28 @@ const Nav = styled.nav`
 
 const Navbar = ({ buttonText }) => (
   <Nav>
-    {/* <Container> */}
-      {/* <Row>
-        <Col xs={12} md={12}> */}
-      <div className="brand-contain">
-        <Logo white />
-        {console.log('navbar', buttonText)}
-        <Menu buttonText={buttonText} />
-        {/* burger button and mobile menu */}
-        <Popup
-          modal
-          closeOnDocumentClick
-          contentStyle={contentStyle}
-          overlayStyle={{background: 'transparent'}}
-          trigger={open => <Burger open={open} />}
-          position="top right"
-        >
-          {close => <Menu close={close} />}
-        </Popup>
-      </div>
-      {/* </Col>
-      </Row> */}
-    {/* </Container> */}
+    <Container>
+      <Row>
+        <Col xs={12} md={12}>
+          <div className="brand-contain">
+            <Logo white />
+            {console.log('navbar', buttonText)}
+            <Menu buttonText={buttonText} />
+            {/* burger button and mobile menu */}
+            <Popup
+              modal
+              closeOnDocumentClick
+              contentStyle={contentStyle}
+              overlayStyle={{background: 'transparent'}}
+              trigger={open => <Burger open={open} />}
+              position="top right"
+            >
+              {close => <Menu close={close} />}
+            </Popup>
+          </div>
+        </Col>
+      </Row>
+    </Container>
   </Nav>
 )
 
