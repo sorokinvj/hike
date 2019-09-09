@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 import Input from '../style/Input'
 import Error from '../style/Error'
 import Button from '../style/Button'
@@ -23,7 +24,7 @@ class EmailForm extends React.Component {
   }
 
   render () {
-    const { status, message, onValidated } = this.props
+    const { status, message } = this.props
     let color = 'radial-gradient(134.57px at 50.2% -20.24%, #70BAFF 0%, #1B91FD 100%)'
     if (status === "error") {
       color = null
@@ -68,6 +69,7 @@ class EmailForm extends React.Component {
             {status === "success" && 'Success'}
             {status === null && 'Subscribe'}        
           </Button>
+          {status === "success" && this.sayThanks()}
         </form>
       </Styled>
     )
@@ -86,11 +88,11 @@ class EmailForm extends React.Component {
         LASTNAME: lastName
       })
     }
-    // logEvent({
-    //   category: 'Landing',
-    //   action: 'Left an email'
-    // })
-    // ReactPixel.track( 'CompleteRegistration' ) 
+    logEvent({
+      category: 'Landing',
+      action: 'Left an email'
+    })
+    ReactPixel.track( 'CompleteRegistration' ) 
   }
 
   handleChange = (e) => {
@@ -98,6 +100,26 @@ class EmailForm extends React.Component {
       [e.target.name]: e.target.value
     })
   }
+
+  sayThanks = () => {
+    const { status, showThanks, closeBookPopup } = this.props
+    if (status === "success") {
+      showThanks()
+      closeBookPopup()
+    }
+  }
+}
+
+EmailForm.propTypes = {
+  status: PropTypes.shape({
+    status: PropTypes.string,
+  }), 
+  message: PropTypes.shape({
+    status: PropTypes.string,
+  }), 
+  onValidated: PropTypes.func.isRequired, 
+  closeBookPopup: PropTypes.func.isRequired, 
+  showThanks: PropTypes.func.isRequired
 }
 
 export default EmailForm

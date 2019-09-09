@@ -5,7 +5,6 @@ import styled from 'styled-components'
 import CloseButton from './CloseButton'
 import { Container, Row, Col } from '@bootstrap-styled/v4'
 import H1 from '../style/H1'
-import EmailCollector from './EmailCollector'
 import Modal from '../style/Modal'
 
 const Styled = styled.div`
@@ -20,7 +19,7 @@ const Styled = styled.div`
     }
 `
 
-const BookPopup = ({ close, showThanks }) => {
+const ThanksPopup = ({ close }) => {
   return (
     <Modal close={close}>
       <Container>
@@ -29,15 +28,11 @@ const BookPopup = ({ close, showThanks }) => {
           <Col xs={12} md={{size: 8, offset: 2}} lg={{size: 6, offset:3}}>
             <Styled>
               <H1>
-                Reserve your spot for this fall
+                Thanks!
               </H1>
               <p className="body">
-                We are currently designing the trip details and logistics. Please leave your email and we will keep you up to date once we release the full details of the tour.
+                We will be in touch with you soon
               </p>
-              <EmailCollector 
-                showThanks={showThanks} 
-                closeBookPopup={close}
-              />
             </Styled>
           </Col>
         </Row>
@@ -46,9 +41,8 @@ const BookPopup = ({ close, showThanks }) => {
   )
 }
 
-BookPopup.propTypes = {
-  close: PropTypes.func.isRequired,
-  showThanks: PropTypes.func.isRequired
+ThanksPopup.propTypes = {
+  close: PropTypes.func.isRequired
 }
 
-export default BookPopup
+export default ThanksPopup
