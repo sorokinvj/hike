@@ -9,7 +9,6 @@ import BootstrapProvider from '@bootstrap-styled/provider/lib/BootstrapProvider'
 import Footer from '../components/footer'
 import GeneralHead from '../components/GeneralHead'
 import GlobalStyle from '../components/globals'
-import Navbar from '../components/navbar'
 import MobileDetect from 'mobile-detect'
 import { theme } from '../components/globals'
 
@@ -34,6 +33,8 @@ class MyApp extends App {
     }
   }
 
+ 
+
   render() {
     const {
       Component, pageProps, phone, tablet, router
@@ -42,9 +43,9 @@ class MyApp extends App {
       <Container>
         <BootstrapProvider reset theme={theme}>
           <GlobalStyle />
-          <Navbar page={router.asPath} />
           <GeneralHead />
           <Component {...pageProps} phone={phone} tablet={tablet} />
+          <div id="modal-root" />
           <Footer page={router.asPath} />
         </BootstrapProvider>
       </Container>

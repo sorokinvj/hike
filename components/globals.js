@@ -9,14 +9,11 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html {
-      font-size: 62.5%;
-      @media (max-width: 768px) {
-          overflow-x: hidden;
-      }
+    font-size: 62.5%;
   }
+
   body {
-    margin: 0;
-    padding: 0;
+    overflow-x: hidden;
   }
 
   @font-face {

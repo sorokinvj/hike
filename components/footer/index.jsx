@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import Logo from '../navbar/Logo'
-import Menu from '../navbar/Menu'
+import Logo from '../landing/navbar/Logo'
+import Menu from '../landing/navbar/Menu'
 
 const Styled = styled.div`
   padding: 8rem 0 10rem;
@@ -61,7 +61,7 @@ const index = ({ page }) => {
     <Styled>
       <Logo white />
       <p className="motto">Life on the move</p>
-      {page !== '/' && <Menu />}
+      <Menu noButton />
       <p className="contacts">
         <a href="mailto:hello@hiketrips.com">
           hello@hiketrips.com

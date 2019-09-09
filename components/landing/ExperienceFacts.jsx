@@ -6,46 +6,49 @@ import { Container, Row, Col } from '@bootstrap-styled/v4'
 import H1 from '../style/H1'
 
 const Styled = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0 10rem 0;
+  margin: 10rem 0 0 0;
+  .facts {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10rem 0;
-    .facts {
-      display: flex;
-      flex-direction: column;
-      @media (min-width: 416px) {
-        flex-direction: row;
+    @media (min-width: 416px) {
+      flex-direction: row;
+      justify-content: center;
+    }
+    .fact {
+      text-align: center;
+      width: 20rem;
+      &:not(:last-child) {
+          margin-bottom: 4rem;
       }
-      .fact {
-          text-align: center;
-          width: 20rem;
-          &:not(:last-child) {
-              margin-bottom: 4rem;
-          }
 
-          p  {
-              font-family: Helvetica;
-              font-size: 2rem;
-              color: #4F4F4F;
-              width: 70%;
-              margin: 0 auto;
-          }
+      p  {
+        font-family: Helvetica;
+        font-size: 2rem;
+        color: #4F4F4F;
+        width: 70%;
+        margin: 0 auto;
+      }
 
-          img {
-            margin-bottom: 1.5rem;
-            @media (min-width: 416px) {
-              height: 7rem;
-            }
-          }
+      img {
+        margin-bottom: 1.5rem;
+        @media (min-width: 416px) {
+          height: 7rem;
+        }
       }
     }
+  }
 `
 const ExperienceFacts = ({ title, facts, buttonText }) => {
   return (
-    <Container>
-      <Row>
-        <Col xs={12} md={12}>
-          <Styled>
+    <Styled>
+      <Container>
+        <Row>
+          <Col xs={12} md={12}>
             <H1>{title}</H1>
             <div className="facts">
               {facts.map(fact => (
@@ -55,10 +58,10 @@ const ExperienceFacts = ({ title, facts, buttonText }) => {
                 </div>
               ))}
             </div>
-          </Styled>
-        </Col>
-      </Row>
-    </Container>        
+          </Col>
+        </Row>
+      </Container>        
+    </Styled>
   )
 }
 

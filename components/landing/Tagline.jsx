@@ -4,7 +4,6 @@ import styled from 'styled-components'
 
 import { Container, Row, Col } from '@bootstrap-styled/v4'
 import H1 from '../style/H1'
-import BookButton from './BookButton'
 import Body from '../style/Body'
 
 const Section = styled.div`
@@ -12,6 +11,9 @@ const Section = styled.div`
     text-align: center;
     button {
       margin-top: 6rem;
+    }
+    p {
+      margin-bottom: 6rem;
     }
     @media (max-width: 415px) {
       h1 {
@@ -33,9 +35,6 @@ const Tagline = ({ h1, buttonText, description }) => {
             <Body>
               {description}
             </Body>
-            <BookButton>
-              {buttonText}
-            </BookButton>
           </Section>
         </Col>
       </Row>
