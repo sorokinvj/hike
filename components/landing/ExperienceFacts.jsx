@@ -10,11 +10,14 @@ const Styled = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 0 0 10rem 0;
+  margin: 10rem 0 0 0;
   .facts {
     display: flex;
     flex-direction: column;
+    align-items: center;
     @media (min-width: 416px) {
       flex-direction: row;
+      justify-content: center;
     }
     .fact {
       text-align: center;
@@ -42,10 +45,10 @@ const Styled = styled.div`
 `
 const ExperienceFacts = ({ title, facts, buttonText }) => {
   return (
-    <Container>
-      <Row>
-        <Col xs={12} md={12}>
-          <Styled>
+    <Styled>
+      <Container>
+        <Row>
+          <Col xs={12} md={12}>
             <H1>{title}</H1>
             <div className="facts">
               {facts.map(fact => (
@@ -55,10 +58,10 @@ const ExperienceFacts = ({ title, facts, buttonText }) => {
                 </div>
               ))}
             </div>
-          </Styled>
-        </Col>
-      </Row>
-    </Container>        
+          </Col>
+        </Row>
+      </Container>        
+    </Styled>
   )
 }
 

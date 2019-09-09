@@ -13,6 +13,7 @@ const Styled = styled.div`
     color: white;
     text-align: center;
     padding: 32% 0;
+    margin-top: 10rem;
     @media (min-width: 416px) {
       padding: 20rem 0;
     }

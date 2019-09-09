@@ -13,7 +13,7 @@ import BookState from './BookState'
 
 const Styled = styled.div`
   text-align: center;
-  margin: 6rem 0 10rem 0;
+  /* margin: ${props => props.margin ? '0' : '6rem 0 10rem 0'}; */
 `
 
 const logButtonCall = () => {
@@ -26,7 +26,7 @@ const logButtonCall = () => {
 }
 
 
-const BookButton = ({ children, limited }) => {
+const BookButton = ({ children, nav }) => {
   const [isShown, setIsShown] = useState(false)
   const hide = () => setIsShown(false)
   const dispatch = useContext(BookDispatch)
@@ -40,7 +40,7 @@ const BookButton = ({ children, limited }) => {
     dispatch({type: 'increment'})
   }
   return (
-    <Styled>
+    <Styled margin={nav}>
       <Button onClick={show}>
         {children}
       </Button>

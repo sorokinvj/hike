@@ -4,7 +4,6 @@ import styled from 'styled-components'
 
 import { Container, Row, Col } from '@bootstrap-styled/v4'
 import H1 from '../style/H1'
-import BookButton from './BookButton'
 import Day from './Day'
 
 const Styled = styled.div`
@@ -17,18 +16,20 @@ const Styled = styled.div`
   }
 
   /* to make photo without borders */
-  .container {
-    padding: 0;
-    .row {
-      margin: 0;
-      .col-12 {
-        padding: 0;
+  @media (max-width: 415px) {
+    .container {
+      padding: 0;
+      .row {
+        margin: 0;
+        .col-12 {
+          padding: 0;
+        }
       }
     }
   }
 
 `
-const Schedule = ({ title, route, phone, buttonText}) => {
+const Schedule = ({ title, route }) => {
   return (
     <Styled id="route">
       <Container>
@@ -47,7 +48,6 @@ const Schedule = ({ title, route, phone, buttonText}) => {
 
 Schedule.propTypes = {
   title: PropTypes.string,
-  phone: PropTypes.string,
   buttonText: PropTypes.string,
   route: PropTypes.arrayOf(PropTypes.shape({
     highlight_title: PropTypes.arrayOf(PropTypes.shape({

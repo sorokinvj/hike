@@ -70,7 +70,7 @@ const Menu = ({ buttonText, noButton }) => (
         </a>
       </Link>
       {!noButton && 
-      <BookButton>
+      <BookButton nav>
         More info
       </BookButton>
       }
