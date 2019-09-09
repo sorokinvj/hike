@@ -57,7 +57,7 @@ const index = ({ page: { data }, phone, uid }) => {
           description={route_description[0].text}
         />
         <Container>
-          <BookButton limited>
+          <BookButton>
             {button_call_to_action_1}
           </BookButton>
         </Container>
@@ -75,7 +75,7 @@ const index = ({ page: { data }, phone, uid }) => {
           phone={phone}
         />
         <Container>
-          <BookButton limited>
+          <BookButton>
             {button_call_to_action_1}
           </BookButton>
         </Container>

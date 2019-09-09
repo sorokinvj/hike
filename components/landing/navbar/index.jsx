@@ -55,7 +55,6 @@ const Navbar = ({ buttonText }) => (
         <Col xs={12} md={12}>
           <div className="brand-contain">
             <Logo white />
-            {console.log('navbar', buttonText)}
             <Menu buttonText={buttonText} />
             {/* burger button and mobile menu */}
             <Popup
