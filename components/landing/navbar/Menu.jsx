@@ -17,6 +17,7 @@ const Links = styled.div`
     }
     @media (min-width: 415px) and (max-width: 768px) {
       margin: 8.5rem 4rem 0 auto;
+      align-items: flex-end;
     }
     text-align: right;
     margin: 11rem auto 0;

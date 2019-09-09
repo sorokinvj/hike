@@ -17,11 +17,13 @@ const Styled = styled.div`
 class EmailForm extends React.Component {
 
   state = {
-    emailValue: ''
+    email: '',
+    firstName: '',
+    lastName: ''
   }
+
   render () {
     const { status, message, onValidated } = this.props
-    console.log(status, message )
     let color = 'radial-gradient(134.57px at 50.2% -20.24%, #70BAFF 0%, #1B91FD 100%)'
     if (status === "error") {
       color = null
@@ -33,8 +35,24 @@ class EmailForm extends React.Component {
         <form onSubmit={this.submitForm}>
           <Input
             type="email"
-            placeholder="Type your email"
+            name="email"
+            placeholder="Email"
             onChange={this.handleChange}
+            required
+          />
+          <Input
+            type="text"
+            name="firstName"
+            placeholder="First name"
+            onChange={this.handleChange}
+            required
+          />
+          <Input
+            type="text"
+            name="lastName"
+            placeholder="Last name"
+            onChange={this.handleChange}
+            required
           />
           {status === "error" && (
             <Error 
@@ -58,24 +76,26 @@ class EmailForm extends React.Component {
   submitForm = (e) => {
     e.preventDefault()
     const { onValidated } = this.props
-    const { emailValue } = this.state
+    const { email, firstName, lastName } = this.state
     // console.log("Router.router.asPath", Router.router.asPath)
-    if (emailValue.indexOf("@") > -1) {
+    if (email.indexOf("@") > -1) {
       onValidated({
-        EMAIL: emailValue,
-        TOUR: Router.router.asPath
+        EMAIL: email,
+        TOUR: Router.router.asPath,
+        FIRSTNAME: firstName,
+        LASTNAME: lastName
       })
     }
-    logEvent({
-      category: 'Landing',
-      action: 'Left an email'
-    })
-    ReactPixel.track( 'CompleteRegistration' ) 
+    // logEvent({
+    //   category: 'Landing',
+    //   action: 'Left an email'
+    // })
+    // ReactPixel.track( 'CompleteRegistration' ) 
   }
 
   handleChange = (e) => {
     this.setState({
-      emailValue: e.target.value
+      [e.target.name]: e.target.value
     })
   }
 }
