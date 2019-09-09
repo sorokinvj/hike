@@ -53,7 +53,6 @@ const Links = styled.div`
 
 const Menu = ({ buttonText, noButton }) => (
   <Links className="menu">
-    {console.log('menu', buttonText)}
     <ul>
       <Link href="#route">
         <a>

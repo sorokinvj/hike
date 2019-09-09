@@ -6,24 +6,23 @@ import H2 from '../style/H2'
 
 const Styled = styled.div`
 
-    position: relative;
+  position: relative;
 
-    .back {
-        background:${props => ("url(" + props.background + ")")};
-        background-size: cover;
-        height: 22rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        padding-bottom: 2rem; 
-        padding-left: 1.5rem;
-    }
-    h2 {
-        color: white;
-    }
-    .body {
-        padding: 1.5rem;
-    }
+  .back {
+    background:${props => ("url(" + props.background + ")")};
+    background-size: cover;
+    height: 22rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 1.5rem 2rem; 
+  }
+  h2 {
+    color: white;
+  }
+  .body {
+    padding: 1.5rem;
+  }
 `
 
 
