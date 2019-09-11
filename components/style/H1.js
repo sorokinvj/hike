@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const H1 = styled.h1`
-    font-family: 'Agrandir';
+    font-family: 'Nunito Sans', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 3rem;

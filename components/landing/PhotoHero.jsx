@@ -23,8 +23,8 @@ const Hero = styled.div`
     h1 {
       margin: 0 auto;
       color: white;
-      font-family: Fira Sans;
-      font-weight: 500;
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 900;
       line-height: 1.5;
       letter-spacing: 1px;
       font-size: 2.5rem;
