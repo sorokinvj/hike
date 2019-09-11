@@ -21,7 +21,8 @@ const Styled = styled.div`
     flex-direction: column;
 
     .body {
-        margin-top: 1.5rem;
+      margin-top: 3rem;
+      color: white;
     }
 
 `

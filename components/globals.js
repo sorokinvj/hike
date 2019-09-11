@@ -1,12 +1,12 @@
 import { createGlobalStyle } from 'styled-components'
-import 'typeface-fira-sans'
-import 'typeface-fira-sans-extra-condensed'
 
 const GlobalStyle = createGlobalStyle`
 
   * {
     box-sizing: border-box;
   }
+
+  @import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,900&display=swap');
 
   html {
     font-size: 62.5%;
@@ -26,12 +26,14 @@ const GlobalStyle = createGlobalStyle`
     src: url('/static/fonts/agrandir/Agrandir-Variable.ttf');
   }
 
+
   p.body {
-    font-family: Helvetica;
+    font-family: 'Nunito Sans', sans-serif;
     font-style: normal;
     font-weight: normal;
-    font-size: 16px;
-    line-height: 23px;
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+    color: #4F4F4F;
   }
 `
 

@@ -27,7 +27,7 @@ const Tagline = ({ h1, buttonText, description }) => {
   return (
     <Container>
       <Row>
-        <Col xs={12} md={{offset: 2, size: 8}} lg={{size: 6, offset: 3}}>
+        <Col xs={12} md={{offset: 2, size: 8}} lg={{size: 8, offset: 2}}>
           <Section>
             <H1>
               {h1}

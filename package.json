@@ -11,12 +11,8 @@
     "@babel/polyfill": "^7.4.3",
     "@bootstrap-styled/provider": "^1.5.0",
     "@bootstrap-styled/v4": "^3.1.0",
-    "@fortawesome/fontawesome-svg-core": "^1.2.0-14",
-    "@fortawesome/free-solid-svg-icons": "^5.1.0-11",
-    "@fortawesome/react-fontawesome": "0.1.0-11",
     "@zeit/next-css": "latest",
     "body-parser": "^1.19.0",
-    "bulma": "latest",
     "express": "latest",
     "mobile-detect": "^1.4.3",
     "next": "latest",
@@ -34,10 +30,7 @@
     "react-media": "latest",
     "react-player": "^1.11.1",
     "reactjs-popup": "^1.4.2",
-    "styled-components": "^4.3.2",
-    "typeface-fira-sans": "^0.0.75",
-    "typeface-fira-sans-extra-condensed": "^0.0.72",
-    "unfetch": "latest"
+    "styled-components": "^4.3.2"
   },
   "license": "ISC",
   "devDependencies": {

@@ -30,8 +30,8 @@ const Styled = styled.div`
       }
 
       p  {
-        font-family: Helvetica;
-        font-size: 2rem;
+        font-family: 'Nunito Sans',sans-serif;
+        font-size: 1.8rem;
         color: #4F4F4F;
         width: 70%;
         margin: 0 auto;
