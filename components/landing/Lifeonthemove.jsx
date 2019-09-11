@@ -36,7 +36,7 @@ const Lifeonthemove = ({ phone }) => {
       <SquaredTitle>
         <H2>Life on the move</H2>
         <p className="body">
-          Do you love the sense of being on the move? Get the most out of Europe and save time by moving while you sleep in our super cosy bus
+          We are passionate about the nomadic way of living, a constant change of locations, people and experiences. For nomads “Change is home”. Not many people can stick to this lifestyle in the long term though with Hike trips you will feel it in a matter of days and then decide if this is what you want. Our mission is to bring adventure seekers together. Our ambition is to create a community of individuals helping each other to thrive in an ever-changing world. 
         </p>
       </SquaredTitle>
     </Styled>
