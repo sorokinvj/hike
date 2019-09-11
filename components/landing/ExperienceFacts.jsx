@@ -25,6 +25,9 @@ const Styled = styled.div`
       &:not(:last-child) {
           margin-bottom: 4rem;
       }
+      @media (min-width: 416px) {
+        margin-bottom: 4rem;
+      }
 
       p  {
         font-family: Helvetica;

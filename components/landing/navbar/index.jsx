@@ -30,6 +30,7 @@ const Nav = styled.nav`
   position: fixed;
   width: 100%;
   max-width: 100vw;
+  top: 0;
   .popup-overlay {
     height: 50vh;
   }

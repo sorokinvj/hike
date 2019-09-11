@@ -7,12 +7,17 @@ import SquaredTitle from '../style/SquaredTitle'
 const Hero = styled.div`
     margin: 0 auto;
     width: 100%;
-    height: 70rem;
+    height: calc(100vw*1.777777);
     background: ${props => ('url(' + props.back +')')};
-    background-size: cover;
-    padding-top: 15rem;
+    background-size: contain;
+    margin-top: 7rem;
+    background-position: 50% 50%;
+    padding-top: calc(100vh*0.31);
     @media (min-width:416px) {
       padding-top: 20rem;
+      height: 60rem;
+      background-position: 50% 100%;
+      padding-top: 13rem;
     }
 
     h1 {
