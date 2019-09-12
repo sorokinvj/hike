@@ -18,6 +18,7 @@ const Styled = styled.div`
     @media (min-width: 416px) {
       flex-direction: row;
       justify-content: center;
+      align-items: flex-start;
     }
     .fact {
       text-align: center;
