@@ -37,7 +37,7 @@ const Lifeonthemove = ({ phone }) => {
       <SquaredTitle>
         <H2>Life on the move</H2>
         <p className="body">
-          We are passionate about the nomadic way of living, a constant change of locations, people and experiences. For nomads “Change is home”. Not many people can stick to this lifestyle in the long term though with Hike trips you will feel it in a matter of days and then decide if this is what you want. Our mission is to bring adventure seekers together. Our ambition is to create a community of individuals helping each other to thrive in an ever-changing world. 
+          We are passionate about the nomadic way of life: constantly changing locations, meeting people and experiencing the best this world has to offer. For nomads “Change is home”. Sitting still is an opportunity missed. Not many people can stick to this lifestyle in the long term. When you experience a Hike trip, you will get these same experiences in a matter of days. You will see if this fast-paced life is for you. Our mission is to bring adventure seekers together. Our ambition is to create a community of individuals, who support each other to thrive in an ever-changing world.
         </p>
       </SquaredTitle>
     </Styled>
