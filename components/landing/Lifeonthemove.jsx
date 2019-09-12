@@ -10,6 +10,7 @@ const Styled = styled.div`
 
     background: ${props => props.back};
     background-size: cover;
+    background-position: 40% 0%;
     color: white;
     text-align: center;
     padding: 32% 0;
