@@ -32,7 +32,7 @@ const BookPopup = ({ close, showThanks }) => {
                 Reserve your spot for Spring 2020
               </H1>
               <p className="body">
-                We are currently designing the trip details and logistics. Please leave your email and we will keep you up to date once we release the full details of the tour.
+                We are currently finalizing the trip details and logistics. Please leave your name and email and we will let you know as soon as reservations open for Spring 2020!
               </p>
               <EmailCollector 
                 showThanks={showThanks} 
