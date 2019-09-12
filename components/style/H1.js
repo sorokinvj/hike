@@ -8,7 +8,7 @@ const H1 = styled.h1`
     line-height: 4rem;
     text-align: center;
     color: #002B5D;
-    margin: 0 auto 6rem auto;
+    margin: 0 auto 4rem auto;
 `
 
 export default H1
