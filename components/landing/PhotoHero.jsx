@@ -9,7 +9,7 @@ const Hero = styled.div`
     width: 100%;
     height: calc(100vw*1.777777);
     background: ${props => ('url(' + props.back +')')};
-    background-size: contain;
+    background-size: cover;
     margin-top: 7rem;
     background-position: 50% 50%;
     padding-top: calc(100vh*0.31);
