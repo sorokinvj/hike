@@ -14,7 +14,10 @@ const Styled = styled.button`
     color: #FFFFFF;
     border: 0;
     box-shadow: none;
-    width: 100%;
+    width: 33rem;
+    @media (max-width: 320px) {
+      width: 29rem;
+    }
     @media (min-width: 416px) {
       width: 35rem;
     }
@@ -39,7 +42,8 @@ Button.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
-  ]).isRequired
+  ]).isRequired,
+  type: PropTypes.string,
 }
 
 export default Button

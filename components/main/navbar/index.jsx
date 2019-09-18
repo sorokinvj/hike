@@ -21,11 +21,6 @@ const contentStyle = {
 const Nav = styled.nav`
   background: ${props => props.theme["$darkblue"]};
   display: block;
-  /* transition: transform 0.3s ease-out;
-  transform: translateY(0);
-  &.collapsed {
-    transform:translateY(-8rem); 
-  } */
   z-index: 1;
   position: fixed;
   width: 100%;
@@ -49,14 +44,14 @@ const Nav = styled.nav`
   }
 `
 
-const Navbar = ({ buttonText }) => (
+const Navbar = () => (
   <Nav>
     <Container>
       <Row>
         <Col xs={12} md={12}>
           <div className="brand-contain">
             <Logo white />
-            <Menu buttonText={buttonText} />
+            <Menu />
             {/* burger button and mobile menu */}
             <Popup
               modal

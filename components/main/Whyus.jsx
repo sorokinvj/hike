@@ -11,7 +11,7 @@ const Styled = styled.div`
   align-items: center;
   padding: 0 0 10rem 0;
   margin: 10rem 0 0 0;
-  .facts {
+  .benefits {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,11 +20,10 @@ const Styled = styled.div`
       justify-content: center;
       align-items: flex-start;
     }
-    .fact {
+    .item {
       text-align: center;
-      width: 20rem;
       &:not(:last-child) {
-          margin-bottom: 4rem;
+          margin-bottom: 5rem;
       }
       @media (min-width: 416px) {
         margin-bottom: 4rem;
@@ -34,12 +33,16 @@ const Styled = styled.div`
         font-family: 'Nunito Sans',sans-serif;
         font-size: 1.8rem;
         color: #4F4F4F;
-        width: 70%;
+        width: 90%;
         margin: 0 auto;
+      }
+      p.title {
+        font-weight: bold;
+        margin-bottom: 2rem; 
       }
 
       img {
-        margin-bottom: 1.5rem;
+        margin-bottom: 3rem;
         @media (min-width: 416px) {
           height: 7rem;
         }
@@ -47,18 +50,20 @@ const Styled = styled.div`
     }
   }
 `
-const ExperienceFacts = ({ title, facts }) => {
+const Whyus = ({ title, items }) => {
   return (
     <Styled>
       <Container>
         <Row>
           <Col xs={12} md={12}>
             <H1>{title}</H1>
-            <div className="facts">
-              {facts.map(fact => (
-                <div className="fact" key={fact.fact_name[0].text}>
-                  <img src={fact.fact_icon.url} alt="" />
-                  <p>{fact.fact_name[0].text}</p>
+            <div className="benefits">
+              {items.map(item => (
+                // yes it's "tile" not "title" ↓↓↓↓↓↓↓
+                <div className="item" key={item.tile[0].text}> 
+                  <img src={item.icon.url} alt="" />
+                  <p className="title">{item.tile[0].text}</p>
+                  <p className="description">{item.description[0].text}</p>
                 </div>
               ))}
             </div>
@@ -69,21 +74,24 @@ const ExperienceFacts = ({ title, facts }) => {
   )
 }
 
-ExperienceFacts.propTypes = {
+Whyus.propTypes = {
   title: PropTypes.string,
-  facts: PropTypes.arrayOf(PropTypes.shape({
-    fact_name: PropTypes.arrayOf(PropTypes.shape({
+  items: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.arrayOf(PropTypes.shape({
       text: PropTypes.string,
     })),
-    fact_icon: PropTypes.shape({
+    description: PropTypes.arrayOf(PropTypes.shape({
+      text: PropTypes.string,
+    })),
+    icon: PropTypes.shape({
       url: PropTypes.string
     })
   }))
 }
 
-ExperienceFacts.defaultProps = {
+Whyus.defaultProps = {
   title: '',
-  facts: []
+  items: []
 }
 
-export default ExperienceFacts
+export default Whyus

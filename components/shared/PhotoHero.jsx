@@ -1,5 +1,5 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import H1 from '../style/H1'
 import SquaredTitle from '../style/SquaredTitle'
@@ -12,6 +12,7 @@ const Hero = styled.div`
     background-size: cover;
     margin-top: 7rem;
     background-position: 50% 50%;
+    padding: 0 10%;
     padding-top: calc(100vh*0.31);
     @media (min-width:416px) {
       padding-top: 20rem;
@@ -46,7 +47,8 @@ const PhotoHero = ({ photo, title }) => {
 }
 
 PhotoHero.propTypes = {
-
+  photo: PropTypes.string,
+  title: PropTypes.string
 }
 
 export default PhotoHero

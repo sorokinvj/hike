@@ -1,77 +1,90 @@
 // core libs
 import React from 'react'
 import PropTypes from 'prop-types'
-import ReactPlayer from 'react-player'
-import styled from 'styled-components'
-import Logo from '../components/landing/navbar/Logo'
-import Head from 'next/head'
 
-const MainPage = styled.div`
-  background: #030E47;
-  padding-top: 100px;
-  height: 100vh;
+import Prismic from 'prismic-javascript'
+import { client } from '../prismic-configuration'
 
-  .logo {
-    margin: 0 auto 50px;
-    width: 150px;
-    img {
-      width: 150px;
-    }
+import MainPage from '../components/main/'
+
+class Main extends React.Component {
+
+  static async getInitialProps() {
+    const response = await client.query(
+      Prismic.Predicates.at('document.type', 'main'),
+    )
+
+    return { response }
   }
-  .player-wrap {
-    margin: 3rem auto 0;
-    width: 640px;
-    height: 360px;
-    @media (max-width: 375px){
-      width: 100%;
-      height: 209px;
-    }
-    @media (max-width: 415px){
-      width: 100%;
-      height: 234px;
-    }
-  }
-
-  .center-text {
-    margin: 30px auto;
-    width: 50%;
-    p, a {
-      color: white;
-      font-family: 'Fira Sans', sans-serif;
-      margin: 0 auto;
-      text-align: center;
-    }
-    a {
-      width: 100%;
-    }
-  }
-
-`
-
-
-class Index extends React.Component {
 
   render() {
-    const { phone } = this.props
+    const { phone, response } = this.props
+    // console.log("main, ", this.props)
     return (
-      <MainPage>
-        <Head><meta name="google-site-verification" content="SIn9A-KaSpuFc3X0Okk1BQxQIA1qPpn8lOHCyeOHks4" /></Head>
-        {phone === null && <Logo center />}
-        <div className="player-wrap">
-          <ReactPlayer 
-            url='https://www.youtube.com/watch?v=pgm-LWY7BLU' 
-            playing           
-            width='100%'
-            height='100%'
-          />
-        </div>
-      </MainPage>
+      <MainPage 
+        page={response.results[0].data}
+        phone={phone}
+      />
     )
   }
 }
 
-Index.propTypes = {
+Main.propTypes = {
   phone: PropTypes.string,
+  response: PropTypes.shape({
+    results: PropTypes.arrayOf(PropTypes.shape({
+      data: PropTypes.shape({
+        benefits: PropTypes.arrayOf(PropTypes.shape({
+          benefit_icon: PropTypes.shape({
+            url: PropTypes.string
+          }),
+          benefits_description: PropTypes.arrayOf(PropTypes.shape({
+            text: PropTypes.string
+          })),
+          benefits_heading: PropTypes.arrayOf(PropTypes.shape({
+            text: PropTypes.string
+          })),
+        })),
+        benefits_title: PropTypes.arrayOf(PropTypes.shape({
+          text: PropTypes.string
+        })),
+        button_to_contacts: PropTypes.string,
+        contacts_title: PropTypes.arrayOf(PropTypes.shape({
+          text: PropTypes.string
+        })),
+        description_meta: PropTypes.string,
+        heading: PropTypes.arrayOf(PropTypes.shape({
+          text: PropTypes.string
+        })),
+        subtitile: PropTypes.arrayOf(PropTypes.shape({
+          text: PropTypes.string
+        })),
+        title: PropTypes.arrayOf(PropTypes.shape({
+          text: PropTypes.string
+        })),
+        title_meta: PropTypes.string,
+        tour_button: PropTypes.string,
+        tour_description: PropTypes.arrayOf(PropTypes.shape({
+          text: PropTypes.string
+        })),
+        tour_heading: PropTypes.arrayOf(PropTypes.shape({
+          text: PropTypes.string
+        })),
+        tour_preview: PropTypes.shape({
+          url: PropTypes.string,
+          mob: PropTypes.shape({
+            url: PropTypes.string
+          })
+        }),
+        wallpaper: PropTypes.shape({
+          url: PropTypes.string,
+          mob: PropTypes.shape({
+            url: PropTypes.string
+          })
+        })
+      })
+    }))
+  })
 }
 
-export default Index
+export default Main

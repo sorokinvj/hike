@@ -1,18 +1,17 @@
 import React, { useReducer} from 'react'
 import PropTypes from 'prop-types'
 import { Container } from '@bootstrap-styled/v4'
+
+// components
 import Navbar from './navbar/'
 import ExperienceFacts from './ExperienceFacts'
 import HostelOnWheels from './HostelOnWheels'
-import Lifeonthemove from './Lifeonthemove'
+import Lifeonthemove from '../shared/Lifeonthemove'
 import Map from './Map'
 import Schedule from './Schedule'
-import Tagline from './Tagline'
-
-// import Tribe from './Tribe'
-// import VideoHero from './VideoHero'
-import PhotoHero from './PhotoHero'
-import Meta from './Head'
+import Tagline from '../shared/Tagline'
+import PhotoHero from '../shared/PhotoHero'
+import Meta from '../shared/Meta'
 import BookButton from './BookButton'
 import BookDispatch from './BookDispatch'
 import BookState from './BookState'
@@ -30,7 +29,7 @@ function counterReducer(state, action) {
 const index = ({ page: { data }, phone, uid }) => {
 
 
-  const { wallpaper, title, describe, map_title, route_description, map, 
+  const { wallpaper, title, describe, route_description, map, 
     facts_title, facts, schedule_title, route, button_call_to_action_1, 
     description_meta, title_meta} = data
 
@@ -40,7 +39,7 @@ const index = ({ page: { data }, phone, uid }) => {
     <BookDispatch.Provider value={dispatch}>
       <BookState.Provider value={counterBookButton}>
         <Meta 
-          uid={uid}
+          ogUrl={"https://hiketrips.com/tour/" + uid}
           description={description_meta} 
           title={title_meta}
           image={wallpaper.url}
@@ -89,7 +88,61 @@ const index = ({ page: { data }, phone, uid }) => {
 }
 
 index.propTypes = {
-
+  phone: PropTypes.string, 
+  uid: PropTypes.string,
+  page: PropTypes.shape({
+    data: PropTypes.shape({
+      button_call_to_action_1: PropTypes.string,
+      describe: PropTypes.arrayOf(PropTypes.shape({
+        text: PropTypes.string
+      })),
+      description_meta: PropTypes.string,
+      facts_title: PropTypes.arrayOf(PropTypes.shape({
+        text: PropTypes.string
+      })),
+      facts: PropTypes.arrayOf(PropTypes.shape({
+        fact_icon: PropTypes.shape({
+          url: PropTypes.string
+        }),
+        fact_name: PropTypes.arrayOf(PropTypes.shape({
+          text: PropTypes.string
+        })),
+      })),
+      map: PropTypes.shape({
+        url: PropTypes.string,
+        mob: PropTypes.shape({
+          url: PropTypes.string
+        })
+      }),
+      route: PropTypes.arrayOf(PropTypes.shape({
+        highlight_title: PropTypes.arrayOf(PropTypes.shape({
+          text: PropTypes.string
+        })),
+        highlight_img: PropTypes.shape({
+          url: PropTypes.string
+        }),
+        highlight_description: PropTypes.arrayOf(PropTypes.shape({
+          text: PropTypes.string
+        })),
+      })),
+      route_description: PropTypes.arrayOf(PropTypes.shape({
+        text: PropTypes.string
+      })),
+      schedule_title: PropTypes.arrayOf(PropTypes.shape({
+        text: PropTypes.string
+      })),
+      title: PropTypes.arrayOf(PropTypes.shape({
+        text: PropTypes.string
+      })),
+      title_meta: PropTypes.string,
+      wallpaper: PropTypes.shape({
+        url: PropTypes.string,
+        mob: PropTypes.shape({
+          url: PropTypes.string
+        })
+      })
+    })
+  })
 }
 
 export default index

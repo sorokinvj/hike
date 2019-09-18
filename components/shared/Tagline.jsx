@@ -23,7 +23,7 @@ const Section = styled.div`
 
 `
 
-const Tagline = ({ h1, buttonText, description }) => {
+const Tagline = ({ h1, description }) => {
   return (
     <Container>
       <Row>
@@ -44,12 +44,12 @@ const Tagline = ({ h1, buttonText, description }) => {
 
 Tagline.propTypes = {
   h1: PropTypes.string, 
-  buttonText: PropTypes.string
+  description: PropTypes.string
 }
 
 Tagline.defaultProps = {
   h1: '',
-  buttonText: ''
+  description: ''
 }
 
 

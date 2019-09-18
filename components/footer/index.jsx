@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import Logo from '../landing/navbar/Logo'
+import Logo from '../shared/Logo'
 import Menu from '../landing/navbar/Menu'
 
 const Styled = styled.div`
