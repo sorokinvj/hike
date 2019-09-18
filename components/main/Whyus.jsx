@@ -31,9 +31,12 @@ const Styled = styled.div`
 
       p  {
         font-family: 'Nunito Sans',sans-serif;
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         color: #4F4F4F;
         width: 90%;
+        @media (min-width: 416px) {
+          width: 85%;
+        }
         margin: 0 auto;
       }
       p.title {

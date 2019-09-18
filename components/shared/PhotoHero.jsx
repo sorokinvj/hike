@@ -18,7 +18,7 @@ const Hero = styled.div`
       padding-top: 20rem;
       height: 60rem;
       background-position: 50% 100%;
-      padding-top: 13rem;
+      padding: 13rem 27% 0;
     }
 
     h1 {

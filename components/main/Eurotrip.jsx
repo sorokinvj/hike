@@ -18,12 +18,10 @@ const Eurotrip = ({ img, imgTitle, buttonText, title, description }) => {
 //   console.log('eurotrip', img, imgTitle, buttonText, title, description)
   return (
     <Styled>
-      <Container>
-        <PhotoHero 
-          photo={img}
-          title={imgTitle}
-        /> 
-      </Container>
+      <PhotoHero 
+        photo={img}
+        title={imgTitle}
+      /> 
       <Tagline 
         h1={title}
         description={description}
