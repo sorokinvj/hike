@@ -52,7 +52,7 @@ const index = ({ page: { data }, phone, uid }) => {
           title={title[0].text}
         />
         <Tagline 
-          h1={describe[0].text}
+          title={describe[0].text}
           description={route_description[0].text}
         />
         <Container>

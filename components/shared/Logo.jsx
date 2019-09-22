@@ -25,7 +25,9 @@ const Logo = ({ center, white, black }) => {
 }
 
 Logo.propTypes = {
-  center: PropTypes.bool
+  center: PropTypes.bool,
+  white: PropTypes.bool,
+  black: PropTypes.bool
 }
 
 Logo.defaultProps = {

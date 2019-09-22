@@ -19,7 +19,7 @@ const contentStyle = {
 }
 
 const Nav = styled.nav`
-  background: ${props => props.theme["$darkblue"]};
+  background: ${props => props.transparent ? 'transparent' : props.theme["$darkblue"]};
   display: block;
   z-index: 1;
   position: fixed;
@@ -32,7 +32,7 @@ const Nav = styled.nav`
   .brand-contain {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: ${props => props.noLogo ? 'flex-end' : 'space-between'};
     align-items: center;
     padding: 2rem 0 2rem 1rem;
   }
@@ -44,13 +44,15 @@ const Nav = styled.nav`
   }
 `
 
-const Navbar = () => (
-  <Nav>
+const Navbar = ({ transparent, noLogo}) => (
+  <Nav transparent={transparent} noLogo={noLogo}>
     <Container>
       <Row>
         <Col xs={12} md={12}>
           <div className="brand-contain">
-            <Logo white />
+            {!noLogo &&
+              <Logo white />
+            }
             <Menu />
             {/* burger button and mobile menu */}
             <Popup

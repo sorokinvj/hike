@@ -53,17 +53,17 @@ const Links = styled.div`
 const Menu = () => (
   <Links className="menu">
     <ul>
-      <Link href="#route">
+      <Link href="/tour/lisbon-berlin">
         <a>
           <li>Eurotrip</li>
         </a>
       </Link>
-      <Link href="#move">
+      <Link href="/about">
         <a>
           <li>Why us</li>
         </a>
       </Link>
-      <Link href="#virtual_tour">
+      <Link href="/contact">
         <a>
           <li>Contact</li>
         </a>
