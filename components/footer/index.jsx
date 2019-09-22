@@ -114,7 +114,7 @@ const index = ({ page, phone }) => {
             />
           </Col>
           <Col className="order-md-1" xs={12} md={{size: 3}}>
-            <Logo white center={phone}/>
+            <Logo white center={phone!==null}/>
             <p className="contacts">
               <a href="mailto:hello@hiketrips.com">
                 hello@hiketrips.com
