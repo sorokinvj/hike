@@ -5,7 +5,8 @@ import styled from 'styled-components'
 import CloseButton from './CloseButton'
 import { Container, Row, Col } from '@bootstrap-styled/v4'
 import H1 from '../style/H1'
-import EmailCollector from './EmailCollector'
+import EmailCollector from '../shared/EmailCollector'
+import EmailForm from './EmailForm'
 import Modal from '../style/Modal'
 
 const Styled = styled.div`
@@ -37,6 +38,7 @@ const BookPopup = ({ close, showThanks }) => {
               <EmailCollector 
                 showThanks={showThanks} 
                 closeBookPopup={close}
+                EmailForm={EmailForm}
               />
             </Styled>
           </Col>

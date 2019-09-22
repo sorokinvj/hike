@@ -10,7 +10,7 @@ import Logo from '../../shared/Logo'
 
 const contentStyle = {
   position: 'relative',
-  background: 'rgba(3, 14, 71, 0.7)',
+  background: 'linear-gradient(180deg, #000000 23%, #002B5D 100%)',
   width: '100%',
   height: '100%',
   margin: '0 0 0 auto',
@@ -19,7 +19,7 @@ const contentStyle = {
 }
 
 const Nav = styled.nav`
-  background: ${props => props.theme["$darkblue"]};
+  background: black;
   display: block;
   /* transition: transform 0.3s ease-out;
   transform: translateY(0);

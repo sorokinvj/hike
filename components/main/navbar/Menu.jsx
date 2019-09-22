@@ -34,7 +34,7 @@ const Links = styled.div`
         letter-spacing: 0.7px;
         font-weight: 100;
       }
-      font-family: 'Helvetica';
+      font-family: 'Nunito Sans';
     }
   }
   button {

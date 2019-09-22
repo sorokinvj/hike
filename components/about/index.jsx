@@ -27,7 +27,7 @@ const About = ({ page, }) => {
   } = page
   return (
     <AboutPage>
-      <Navbar noLogo transparent />
+      <Navbar noLogo />
       <Hero phone={phone} />
       <Tagline 
         title={vision_title[0].text}

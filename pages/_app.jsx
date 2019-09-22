@@ -46,7 +46,7 @@ class MyApp extends App {
           <GeneralHead />
           <Component {...pageProps} phone={phone} tablet={tablet} />
           <div id="modal-root" />
-          <Footer page={router.asPath} />
+          <Footer page={router.asPath} phone={phone} />
         </BootstrapProvider>
       </Container>
     )
