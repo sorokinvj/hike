@@ -44,7 +44,7 @@ const index = ({ page, phone }) => {
           title={title[0].text}
         />
         <Tagline 
-          h1={heading[0].text}
+          title={heading[0].text}
           description={subtitle[0].text}
         />
         <Eurotour

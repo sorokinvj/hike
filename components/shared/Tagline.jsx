@@ -23,14 +23,14 @@ const Section = styled.div`
 
 `
 
-const Tagline = ({ h1, description }) => {
+const Tagline = ({ title, description }) => {
   return (
     <Container>
       <Row>
         <Col xs={12} md={{offset: 2, size: 8}} lg={{size: 8, offset: 2}}>
           <Section>
             <H1>
-              {h1}
+              {title}
             </H1>
             <Body>
               {description}
