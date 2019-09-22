@@ -7,6 +7,16 @@ const Styled = styled.div`
     height: 46rem;
     background: linear-gradient(180deg, #000000 23%, #002B5D 100%);
     padding-top: 23rem;
+    @media (min-width: 416px) {
+      padding: 0;
+      background: url(/static/about_back.svg),linear-gradient(180deg,#000000 23%,#002B5D 100%);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position-y: 50%;    
+    }
+    @media (min-width: 769px) {
+      background-size: cover;
+    }
     text-align: center;
     p {
         color: white;
@@ -18,10 +28,10 @@ const Styled = styled.div`
     }
 `
 
-const Hero = () => {
+const Hero = ({ phone }) => {
   return (
     <Styled>
-      <Logo center white />
+      {phone && <Logo center white />}
     </Styled>
   )
 }

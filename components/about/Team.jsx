@@ -22,6 +22,10 @@ const Styled = styled.div`
     flex-direction: column;
     align-items: center;
     @media (min-width: 416px) {
+      flex-direction: column;
+      align-items: center;
+    }
+    @media (min-width: 769px) {
       flex-direction: row;
       justify-content: center;
       align-items: flex-start;
@@ -40,7 +44,10 @@ const Styled = styled.div`
         font-size: 1.6rem;
         color: #4F4F4F;
         width: 90%;
-        @media (min-width: 416px) {
+        @media (min-width: 416px) and (max-width: 768px) {
+          width: 50%;
+        }
+        @media (min-width: 769px) {
           width: 85%;
         }
         margin: 0 auto;
@@ -52,9 +59,6 @@ const Styled = styled.div`
 
       img {
         margin-bottom: 3rem;
-        @media (min-width: 416px) {
-          height: 7rem;
-        }
       }
     }
   }

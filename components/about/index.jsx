@@ -23,17 +23,18 @@ const About = ({ page, }) => {
     team_members,
     partners_title,
     partners,
+    phone
   } = page
   return (
     <AboutPage>
       <Navbar noLogo transparent />
-      <Hero />
+      <Hero phone={phone} />
       <Tagline 
         title={vision_title[0].text}
         description={vision_description[0].text}
       />
       <Story 
-        img={story_img.mob.url}
+        img={story_img}
         title={story_title[0].text}
         description={story_description[0].text}
       />
