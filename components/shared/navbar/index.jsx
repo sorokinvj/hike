@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
-
+import Link from 'next/link'
 import { Container, Row, Col } from '@bootstrap-styled/v4'
 import Popup from 'reactjs-popup'
 import Menu from './Menu'
-import Burger from '../../shared/Burger'
-import Logo from '../../shared/Logo'
+import Burger from '../Burger'
+import Logo from '../Logo'
 
 const contentStyle = {
   position: 'relative',
@@ -51,7 +51,11 @@ const Navbar = ({ transparent, noLogo}) => (
         <Col xs={12} md={12}>
           <div className="brand-contain">
             {!noLogo &&
-              <Logo white />
+            <Link href="/">
+              <a>
+                <Logo white />
+              </a>
+            </Link>
             }
             <Menu />
             {/* burger button and mobile menu */}

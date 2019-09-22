@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Navbar from '../main/navbar/'
+import Navbar from '../shared/navbar/'
 import Hero from './Hero'
 import Tagline from '../shared/Tagline'
 import Story from './Story'
@@ -27,7 +27,7 @@ const About = ({ page, }) => {
   } = page
   return (
     <AboutPage>
-      <Navbar noLogo />
+      <Navbar />
       <Hero phone={phone} />
       <Tagline 
         title={vision_title[0].text}

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { Container, Row, Col } from '@bootstrap-styled/v4'
 import Logo from '../shared/Logo'
-import Menu from '../main/navbar/Menu'
+import Menu from '../shared/navbar/Menu'
 import EmailForm from './EmailForm'
 import EmailCollector from '../shared/EmailCollector'
 

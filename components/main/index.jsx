@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 // components
 import Meta from '../shared/Meta'
-import Navbar from './navbar/'
+import Navbar from '../shared/navbar/'
 import PhotoHero from '../shared/PhotoHero'
 import Tagline from '../shared/Tagline'
 import Eurotour from './Eurotrip'

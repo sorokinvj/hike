@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Container } from '@bootstrap-styled/v4'
 
 // components
-import Navbar from './navbar/'
+import Navbar from '../shared/navbar/'
 import ExperienceFacts from './ExperienceFacts'
 import HostelOnWheels from './HostelOnWheels'
 import Lifeonthemove from '../shared/Lifeonthemove'
