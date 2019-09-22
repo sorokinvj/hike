@@ -35,14 +35,14 @@ const HostelOnWheels = ({ buttonText }) => {
               <p className="body">
                 The first organized tour of its kind, where you travel while never changing your accommodation. Our luxury hostel bus is equipped with comfortable beds, kitchen, two lounges, and even a bar. If getting the most out of your trip and travelling with likeminded people is important to you, sign up today!
               </p>
-              <H1 id="virtual_tour">
+              {/* <H1 id="virtual_tour">
                   Take a virtual tour of Hike bus
-              </H1>
+              </H1> */}
             </Styled>
           </Col>
         </Row>
       </Container>
-      <PlayerContainer>
+      {/* <PlayerContainer>
         <ReactPlayer 
           url='https://www.facebook.com/AbsoluteTouring/videos/924974071042786/' 
           width='100%'
@@ -50,7 +50,7 @@ const HostelOnWheels = ({ buttonText }) => {
           muted
           controls
         />
-      </PlayerContainer>
+      </PlayerContainer> */}
     </>
   )
 }

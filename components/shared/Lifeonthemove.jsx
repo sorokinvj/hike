@@ -22,6 +22,9 @@ const Styled = styled.div`
     @media (min-width: 416px) {
       padding: 13rem 27% 6rem;
     }
+    @media (min-width: 416px) and (max-width: 768px) {
+      padding: 13rem 10% 6rem;
+    }
     display: flex;
     flex-direction: column;
 
